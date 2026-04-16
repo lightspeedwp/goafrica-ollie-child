@@ -1,0 +1,188 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#000",
+					"name": "Color 1",
+					"slug": "custom-color-1"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Mona Sans",
+							"fontStretch": "75% 125%",
+							"fontStyle": "normal",
+							"fontWeight": "300 900",
+							"src": [
+								"file:./assets/fonts/mona-sans/Mona-Sans.woff2"
+							]
+						}
+					],
+					"fontFamily": "Mona Sans, sans-serif",
+					"name": "Mona Sans",
+					"slug": "primary"
+				},
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Mona Sans Expanded",
+							"fontStretch": "125%",
+							"fontStyle": "normal",
+							"fontWeight": "300 900",
+							"src": [
+								"file:./assets/fonts/mona-sans/Mona-Sans.woff2"
+							]
+						}
+					],
+					"fontFamily": "Mona Sans Expanded, sans-serif",
+					"name": "Mona Sans Expanded",
+					"slug": "expanded"
+				},
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Mona Sans Condensed",
+							"fontStretch": "94%",
+							"fontStyle": "normal",
+							"fontWeight": "300 900",
+							"src": [
+								"file:./assets/fonts/mona-sans/Mona-Sans.woff2"
+							]
+						}
+					],
+					"fontFamily": "Mona Sans Condensed, sans-serif",
+					"name": "Mona Sans Condensed",
+					"slug": "condensed"
+				},
+				{
+					"fontFace": [
+						{
+							"fontDisplay": "block",
+							"fontFamily": "Mona Sans Narrow",
+							"fontStretch": "75%",
+							"fontStyle": "normal",
+							"fontWeight": "300 900",
+							"src": [
+								"file:./assets/fonts/mona-sans/Mona-Sans.woff2"
+							]
+						}
+					],
+					"fontFamily": "Mona Sans Narrow, sans-serif",
+					"name": "Mona Sans Narrow",
+					"slug": "narrow"
+				},
+				{
+					"fontFamily": "monospace",
+					"name": "Monospace",
+					"slug": "monospace"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "100",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiGyp8kv8JHgFVrLPTecnFBGPaTSQ.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "200",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiByp8kv8JHgFVrLFj_V15vFP-KUEg.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiByp8kv8JHgFVrLDz8V15vFP-KUEg.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiEyp8kv8JHgFVrFJXUc1NECPY.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiByp8kv8JHgFVrLGT9V15vFP-KUEg.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiByp8kv8JHgFVrLEj6V15vFP-KUEg.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiByp8kv8JHgFVrLCz7V15vFP-KUEg.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "800",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiByp8kv8JHgFVrLDD4V15vFP-KUEg.woff2"
+						},
+						{
+							"fontFamily": "Poppins",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": "https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/fonts/pxiByp8kv8JHgFVrLBT5V15vFP-KUEg.woff2"
+						}
+					],
+					"fontFamily": "Poppins, sans-serif",
+					"name": "Poppins",
+					"slug": "poppins"
+				}
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--poppins)"
+				}
+			},
+			"heading": []
+		}
+	}
+}
