@@ -48,22 +48,22 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#DD4611"
+          "color": "#1F4B3B"
         },
         {
           "name": "Primary Accent",
           "slug": "primary-accent",
-          "color": "#FAE3DB"
+          "color": "#1A5D4A"
         },
         {
           "name": "Primary Alt",
           "slug": "primary-alt",
-          "color": "#BEDCF8"
+          "color": "#DD4611"
         },
         {
           "name": "Primary Alt Accent",
           "slug": "primary-alt-accent",
-          "color": "#8090A2"
+          "color": "#BE3100"
         },
         {
           "name": "Main",
