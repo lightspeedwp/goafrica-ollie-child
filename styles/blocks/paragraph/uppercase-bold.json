@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Uppercase Bold",
+	"slug": "ga-uppercase-bold",
+	"blockTypes": [
+		"core/paragraph"
+	],
+	"description": "GoAfrica Uppercase Bold Paragraph",
+	"styles": {
+		"typography": {
+			"fontWeight": "medium",
+			"textTransform": "uppercase",
+			"letterSpacing": "1px"
+		}
+	}
+}

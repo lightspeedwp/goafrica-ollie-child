@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Underline",
+	"slug": "ga-underline-button",
+	"blockTypes": [
+		"core/button"
+	],
+	"description": "GoAfrica underline text button",
+	"styles": {
+		"border": {
+			"width": "0",
+			"style": "none"
+		},
+		"color": {
+			"background": "transparent",
+			"text": "var:preset|color|base"
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|base",
+			"fontWeight": "semi-bold"
+		},
+		"css": "&{padding: 0; text-decoration-line: underline; text-decoration-color: var(--wp--preset--color--primary-alt-accent); text-decoration-thickness: 2px; text-underline-offset: 5px; transition: color 200ms ease;} & svg{transition: transform 200ms ease; text-decoration: none;}"
+	}
+}

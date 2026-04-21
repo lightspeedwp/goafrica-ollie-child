@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA CTA",
+	"slug": "ga-cta-button",
+	"blockTypes": [
+		"core/button"
+	],
+	"description": "GoAfrica CTA button",
+	"styles": {
+		"border": {
+			"radius" : "var:preset|border-radius|sm",
+			"width": "1px",
+			"color": "var:preset|color|primary-alt-accent",
+			"style": "solid"
+		},
+		"color": {
+			"background": "var:preset|color|primary-alt",
+			"text": "var:preset|color|base"
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|base",
+			"fontWeight": "semi-bold",
+			"letterSpacing": "1px"
+		},
+		"spacing": {
+			"padding": {
+				"left": "var:preset|spacing|medium",
+				"right": "var:preset|spacing|medium",
+				"top": "var:preset|spacing|small",
+				"bottom": "var:preset|spacing|small"
+			}
+		},
+		 "css": "&{transition: background-color 200ms ease} &:hover{background-color: var(--wp--preset--color--primary-alt-accent); color: var(--wp--preset--color--base); border-color: var(--wp--preset--color--primary-alt-accent);} &:focus-visible{outline: 2px solid var(--wp--preset--color--primary-alt-accent); outline-offset: 2px;} &:active{background-color: var(--wp--preset--color--primary-alt-accent); color: var(--wp--preset--color--base); border-color: var(--wp--preset--color--primary-alt-accent);}"
+	}
+}

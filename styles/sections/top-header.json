@@ -1,0 +1,31 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Top Header Section",
+	"slug": "section-top-header",
+	"blockTypes": [
+		"core/group"
+	],
+	"description": "Top header section style",
+	"styles": {
+		"spacing": {
+			"padding": {
+				"left": "var:preset|spacing|medium",
+				"right": "var:preset|spacing|medium"
+			}
+		},
+		"blocks": {
+			"links": {
+				"color": {
+					"text": "var:preset|color|base"
+				},
+				"hover": {
+					"color": {
+						"text": "var:preset|color|primary-alt"
+					},
+					"textDecoration": "none"
+				}
+			}
+		}
+	}
+}

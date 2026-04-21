@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Top Header Link",
+	"slug": "top-header-link",
+	"blockTypes": [
+		"core/group"
+	],
+	"description": "Top header link group with border-light hover for text and icon",
+	"styles": {
+		"color": {
+			"text": "var:preset|color|base"
+		},
+		"css": "&{cursor: pointer;} & a, & .wp-block-outermost-icon-block{transition: color 200ms ease;} & a{text-decoration: none;} &:hover a, &:hover .wp-block-outermost-icon-block{color: var(--wp--preset--color--border-light);} &:hover a{text-decoration: none;}"
+	}
+}

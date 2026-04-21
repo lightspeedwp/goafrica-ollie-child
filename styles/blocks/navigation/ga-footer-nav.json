@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Footer Nav",
+	"slug": "footer-nav",
+	"blockTypes": [
+		"core/navigation"
+	],
+	"description": "Footer navigation link list.",
+	"styles": {
+		"typography": {
+			"fontSize": "var:preset|font-size|small",
+			"fontWeight": "regular"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|base"
+				},
+				"typography": {
+					"textDecoration": "none"
+				}
+			}
+		},
+		"css": "& a{transition: color 200ms ease;} & a:hover{color: var(--wp--preset--color--primary-alt); text-decoration: none;} & a:active{color: var(--wp--preset--color--primary-alt); text-decoration: none;} & a:focus-visible{color: var(--wp--preset--color--primary-alt); outline: 2px solid var(--wp--preset--color--primary-alt); outline-offset: 2px;}"
+	}
+}

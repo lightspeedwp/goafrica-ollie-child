@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/wp/trunk/theme.json",
+	"version": 3,
+	"title": "Page Section Default",
+	"slug": "ga-page-section-default",
+	"blockTypes": [
+		"core/group"
+	],
+	"description": "Default styling for page sections",
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|main"
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|xx-large",
+				"bottom": "var:preset|spacing|xx-large"
+			},
+			"margin": {
+				"top": "0",
+				"bottom": "0"
+			},
+			"blockGap": "var:preset|spacing|large"
+		}
+	}
+}

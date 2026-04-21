@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Tour Card",
+	"slug": "ga-tour-card",
+	"blockTypes": [
+		"core/group"
+	],
+	"description": "Tour card section style with border, hover shadow, and parent-triggered cover zoom",
+	"styles": {
+		"border": {
+			"color": "var:preset|color|border-light",
+			"style": "solid",
+			"width": "1px"
+		},
+		"css": "&{overflow: hidden; transition: box-shadow 200ms ease;} &:hover{box-shadow: var(--wp--preset--shadow--medium-light);} & .wp-block-post-title a:hover{text-decoration: none;} & .lsx-info-value a{transition: color 200ms ease; text-decoration: none;} & .lsx-info-value a:hover{color: var(--wp--preset--color--primary); text-decoration: none;} & .wp-block-post-terms.is-style-term-button a{transition: color 200ms ease, background-color 200ms ease;} & .wp-block-post-terms.is-style-term-button a:hover{color: var(--wp--preset--color--primary); background-color: var(--wp--preset--color--primary-light); text-decoration: none;} & .wp-block-cover__image-background{transition: transform 300ms ease;} &:hover .wp-block-cover__image-background{transform: scale(1.05);}"
+	}
+}

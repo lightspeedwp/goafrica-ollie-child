@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Outline",
+	"slug": "ga-outline-button",
+	"blockTypes": [
+		"core/button"
+	],
+	"description": "GoAfrica outline button",
+	"styles": {
+		"border": {
+			"radius": "var:preset|border-radius|sm",
+			"width": "2px",
+			"color": "var:preset|color|base",
+			"style": "solid"
+		},
+		"color": {
+			"background": "color-mix(in srgb, var(--wp--preset--color--main) 40%, transparent)",
+			"text": "var:preset|color|base"
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|base",
+			"fontWeight": "semi-bold",
+			"letterSpacing": "1px"
+		},
+		"spacing": {
+			"padding": {
+				"left": "calc(var(--wp--preset--spacing--medium) - 2px)",
+				"right": "calc(var(--wp--preset--spacing--medium) - 2px)",
+				"top": "calc(var(--wp--preset--spacing--small) - 2px)",
+				"bottom": "calc(var(--wp--preset--spacing--small) - 2px)"
+			}
+		},
+		"css": "&{transition: background-color 200ms ease; color: var(--wp--preset--color--base);} & svg{color: currentColor; fill: currentColor;} &:hover{background-color: color-mix(in srgb, var(--wp--preset--color--main) 60%, transparent);}"
+	}
+}
