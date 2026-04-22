@@ -18,7 +18,8 @@
 		},
 		"typography": {
 			"fontSize": "var:preset|font-size|base",
-			"fontWeight": "semi-bold"
+			"fontWeight": "600",
+			"letterSpacing": "1px"
 		},
 		"css": "&{padding: 0; text-decoration-line: underline; text-decoration-color: var(--wp--preset--color--primary-alt-accent); text-decoration-thickness: 2px; text-underline-offset: 5px; transition: color 200ms ease;} & svg{transition: transform 200ms ease; text-decoration: none;}"
 	}

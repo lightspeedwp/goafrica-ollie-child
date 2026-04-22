@@ -20,7 +20,7 @@
 		},
 		"typography": {
 			"fontSize": "var:preset|font-size|base",
-			"fontWeight": "semi-bold",
+			"fontWeight": "600",
 			"letterSpacing": "1px"
 		},
 		"spacing": {

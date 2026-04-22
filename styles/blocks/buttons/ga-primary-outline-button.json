@@ -15,12 +15,12 @@
 			"style": "solid"
 		},
 		"color": {
-			"background": "color-mix(in srgb, var(--wp--preset--color--primary) 50%, transparent)",
-			"text": "var:preset|color|base"
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|primary"
 		},
 		"typography": {
 			"fontSize": "var:preset|font-size|base",
-			"fontWeight": "semi-bold",
+			"fontWeight": "600",
 			"letterSpacing": "1px"
 		},
 		"spacing": {
@@ -31,6 +31,6 @@
 				"bottom": "calc(var(--wp--preset--spacing--small) - 2px)"
 			}
 		},
-		"css": "&{transition: background-color 200ms ease; color: var(--wp--preset--color--base);} & svg{color: currentColor; fill: currentColor;} &:hover{background-color: color-mix(in srgb, var(--wp--preset--color--primary) 80%, transparent);}"
+		"css": "&{transition: background-color 200ms ease;} & svg{color: currentColor; fill: currentColor;} &:hover{color: var(--wp--preset--color--base); background-color: var(--wp--preset--color--primary);}"
 	}
 }
