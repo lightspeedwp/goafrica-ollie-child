@@ -36,7 +36,7 @@
         {
           "name": "Primary Alt Light",
           "slug": "primary-alt-light",
-          "color": "#DE481215"
+          "color": "##FFFBF5"
         },
         {
           "name": "Main",
@@ -293,7 +293,7 @@
 				},
         {
 					"fluid": {
-						"min": "3.25rem",
+						"min": "2.5rem",
 						"max": "5rem"
 					},
 					"size": "4.5rem",

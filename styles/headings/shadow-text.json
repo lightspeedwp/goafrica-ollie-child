@@ -4,7 +4,7 @@
 	"title": "Shadow Text",
 	"slug": "shadow-text",
 	"blockTypes": [
-		"core/heading", "core/paragraph"
+		"core/heading", "core/paragraph", "core/post-title"
 	],
 	"description": "Subtle dark shadow for headings over image backgrounds",
 	"styles": {
