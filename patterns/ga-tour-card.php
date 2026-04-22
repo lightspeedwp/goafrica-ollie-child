@@ -7,7 +7,7 @@
 ?>
 <!-- wp:group {"metadata":{"name":"Tour Card","categories":["lsx-tour-operator"]},"className":"overflow-hidden is-style-ga-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
 <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-ga-tour-card" style="border-radius:0.5rem"><!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#FFF","isUserOverlayColor":false,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-cover is-light has-custom-content-position is-position-top-left"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#FFF"></span><div class="wp-block-cover__inner-container"><!-- wp:post-terms {"term":"travel-style","className":"is-style-term-button"} /--></div></div>
+<div class="wp-block-cover is-light has-custom-content-position is-position-top-left"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#FFF"></span><div class="wp-block-cover__inner-container"><!-- wp:post-terms {"term":"travel-style","className":"is-style-term-button ga-tour-card-badges"} /--></div></div>
 <!-- /wp:cover -->
 
 <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|small","left":"var:preset|spacing|small","top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|small"}},"layout":{"type":"default"}} -->
