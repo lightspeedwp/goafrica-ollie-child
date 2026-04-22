@@ -1,0 +1,13 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Travel Style Card",
+	"slug": "ga-travel-style-card",
+	"blockTypes": [
+		"core/cover"
+	],
+	"description": "Travel style card cover with hover overlay and hidden excerpt reveal",
+	"styles": {
+		"css": "&{overflow: hidden;} & .wp-block-cover__gradient-background{transition: background 200ms ease-out;} & .hidden-excerpt{max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; transition: max-height 400ms ease-out, opacity 500ms linear, margin-top 500ms ease-out;} &:hover .wp-block-cover__gradient-background{background: color-mix(in srgb, var(--wp--preset--color--main) 80%, transparent) !important; transition-timing-function: ease-in;} &:hover .hidden-excerpt{max-height: 12rem; opacity: 1; margin-top: var(--wp--preset--spacing--small); transition-timing-function: ease-in, linear, ease-in;}"
+	}
+}
