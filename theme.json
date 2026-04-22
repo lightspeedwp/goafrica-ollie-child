@@ -36,7 +36,7 @@
         {
           "name": "Primary Alt Light",
           "slug": "primary-alt-light",
-          "color": "##FFFBF5"
+          "color": "#FFFBF5"
         },
         {
           "name": "Main",
@@ -771,6 +771,84 @@
         },
         "spacing": {
           "blockGap": "0.4rem"
+        }
+      }
+    },
+    "core/query-pagination": {
+      "spacing": {
+        "margin": {
+          "top": "0",
+          "bottom": "0"
+        },
+        "blockGap": "0.25rem"
+      }
+    },
+    "core/query-pagination-numbers": {
+      "border": {
+        "radius": "0.25rem",
+        "style": "none"
+      },
+      "color": {
+        "background": "var:preset|color|base",
+        "text": "var:preset|color|primary"
+      },
+      "typography": {
+        "fontWeight": "500"
+      },
+      "spacing": {
+        "padding": {
+          "top": "0.25rem",
+          "right": "0.5rem",
+          "bottom": "0.25rem",
+          "left": "0.5rem"
+        },
+        "margin": {
+          "top": "0",
+          "right": "0.125rem",
+          "bottom": "0",
+          "left": "0.125rem"
+        }
+      }
+    },
+    "core/query-pagination-previous": {
+      "border": {
+        "radius": "0.25rem",
+        "style": "none"
+      },
+      "color": {
+        "background": "var:preset|color|base",
+        "text": "var:preset|color|primary"
+      },
+      "typography": {
+        "fontWeight": "500"
+      },
+      "spacing": {
+        "padding": {
+          "top": "0.25rem",
+          "right": "0.5rem",
+          "bottom": "0.25rem",
+          "left": "0.5rem"
+        }
+      }
+    },
+    "core/query-pagination-next": {
+      "border": {
+        "radius": "0.25rem",
+        "style": "none"
+      },
+      "color": {
+        "background": "var:preset|color|base",
+        "text": "var:preset|color|primary"
+      },
+      "typography": {
+        "fontWeight": "500"
+      },
+      "spacing": {
+        "padding": {
+          "top": "0.25rem",
+          "right": "0.5rem",
+          "bottom": "0.25rem",
+          "left": "0.5rem"
         }
       }
     }
