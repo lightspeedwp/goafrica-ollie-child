@@ -305,6 +305,15 @@
 	},
 	"styles": {
 		"elements": {
+      "paragraph": {
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--base)",
+          "fontWeight": "400"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--main)"
+        }
+      },
 			"h1": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--poppins)",
@@ -336,7 +345,24 @@
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--poppins)"
 				}
-			}
+			},
+      "link": {
+        "color": {
+          "text": "var:preset|color|primary"
+        },
+        "typography": {
+          "textDecoration": "none"
+        },
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|primary-alt"
+          },
+          "typography": {
+            "textDecoration": "none"
+          }
+        },
+        "css": "transition: color 200ms ease;"
+      }
 		},
     "custom": {
       "tour-operator": {
