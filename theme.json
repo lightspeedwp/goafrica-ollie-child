@@ -1,5 +1,5 @@
 {
-	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"$schema": "https://schemas.wp.org/wp/trunk/theme.json",
 	"version": 3,
 	"settings": {
     "layout": {
@@ -382,6 +382,79 @@
       }
     },
     "blocks": {
+      "core/query-pagination": {
+        "spacing": {
+          "blockGap": "var(--wp--preset--spacing--medium)"
+        },
+        "elements": {
+          "link": {
+            "border": {
+              "color": "var:preset|color|primary",
+              "style": "solid",
+              "width": "2px",
+              "radius": "8px"
+            },
+            "color": {
+              "background": "var:preset|color|base",
+              "text": "var:preset|color|primary"
+            },
+            "typography": {
+              "textDecoration": "none"
+            },
+            ":hover": {
+              "color": {
+                "background": "var:preset|color|primary",
+                "text": "var:preset|color|base"
+              },
+              "typography": {
+                "textDecoration": "none"
+              }
+            },
+            "css": "&{transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;}"
+          }
+        }
+      },
+      "core/query-pagination-numbers": {
+        "spacing": {
+          "padding": {
+            "top": "8px",
+            "right": "10px",
+            "bottom": "8px",
+            "left": "10px"
+          }
+        },
+"css": "& .page-numbers.current { display: inline-flex; align-items: center; justify-content: center; padding-left: 16px !important; padding-right: 16px !important; padding-top: 8px !important; padding-bottom: 8px !important; line-height: 1.4; background-color: var(--wp--preset--color--primary); color: var(--wp--preset--color--base); border: 2px solid var(--wp--preset--color--primary); border-radius: 8px; box-shadow: none; }"
+
+      },
+      "core/query-pagination-previous": {
+        "spacing": {
+          "padding": {
+            "top": "8px",
+            "right": "24px",
+            "bottom": "8px",
+            "left": "24px"
+          }
+        },
+        "elements": {
+          "link": {
+
+            "color": {
+              "text": "var:preset|color|primary-alt"
+            }
+          }
+        }
+
+      },
+      "core/query-pagination-next": {
+        "spacing": {
+          "padding": {
+            "top": "8px",
+            "right": "24px",
+            "bottom": "8px",
+            "left": "24px"
+          }
+        }
+      },
 		  "lsx-tour-operator/additional-info": {
         "border": {
           "color": "var:preset|color|border-light",
