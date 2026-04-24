@@ -21,7 +21,7 @@
 				"top": "0",
 				"bottom": "0"
 			},
-			"blockGap": "var:preset|spacing|large"
+			"blockGap": "var:preset|spacing|x-large"
 		}
 	}
 }

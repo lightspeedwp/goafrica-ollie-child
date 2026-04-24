@@ -129,3 +129,99 @@ Tags:
 	outline: 2px solid var(--wp--preset--color--primary);
 	outline-offset: 2px;
 }
+
+
+/* ========================================================================== */
+
+/* Expanding Header Search             										  */
+
+/* ========================================================================== */
+
+/* Expanding overlay input pattern */
+.is-style-header-search {
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+/* Style the button as an icon button */
+.is-style-header-search .wp-block-search__button {
+	height: 100%;
+	align-items: center;
+	display: flex;
+	box-sizing: border-box;
+	background: transparent;
+	color: currentColor;
+	transition: none;
+	border: none;
+}
+
+/* Remove any default hover background */
+.is-style-header-search .wp-block-search__button:hover,
+.is-style-header-search .wp-block-search__button:focus-visible {
+	background: transparent;
+	color: currentColor;
+	outline: none;
+}
+
+/* Icon size */
+.is-style-header-search .search-icon {
+	width: 36px;
+	height: 36px;
+	display: block;
+	transform: scaleX(-1);
+}
+
+/* Collapsed state */
+.is-style-header-search .wp-block-search__input {
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	min-width: 0;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: var(--wp--preset--border-radius--sm);
+	transition:
+		width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+		opacity 0.2s,
+		padding 0.2s;
+	background: var(--wp--preset--color--base, #fff);
+	padding: 8px;
+	z-index: 25;
+	box-shadow: var(--wp--preset--shadow--small-dark);
+}
+
+/* Expanded state */
+.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+	width: 600px;
+	min-width: 240px;
+	opacity: 1;
+	pointer-events: auto;
+	padding: 10px 20px;
+}
+
+/* Hidden state (for screen readers) */
+.is-style-header-search .wp-block-search__searchfield-hidden {
+	width: 0 !important;
+	min-width: 0 !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	padding: 8px 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+		width: 360px;
+	}
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 600px) {
+	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
+		width: 260px;
+	}
+}
