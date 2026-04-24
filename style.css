@@ -15,3 +15,117 @@ Text Domain: go-africa-ollie-child
 Tags: 
 */
 
+/* ========================================================================== */
+
+/* Slider Buttons & Bars                                                      */
+
+/* ========================================================================== */
+
+/* Slider Buttons */
+
+/* Position arrows vertically centered */
+.lsx-to-slider .slick-arrow {
+	position: absolute !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	z-index: 2;
+}
+
+/* Left & right anchors */
+.lsx-to-slider .slick-prev {
+	left: -4rem !important;
+}
+
+.lsx-to-slider .slick-next {
+	right: -4rem !important;
+	transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* Remove default arrows */
+.lsx-to-slider .slick-arrow::before {
+	content: none !important;
+}
+
+/* Keep icon + sizing overrides */
+.lsx-to-slider .slick-prev,
+.lsx-to-slider .slick-next {
+	width: 54px !important;
+	height: 54px !important;
+	background: url('./assets/icons/slider-button-default.svg') no-repeat center/contain !important;
+	border: none !important;
+	margin: 0 !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-image 0.2s ease;
+}
+
+/* Hover + focus states */
+.lsx-to-slider .slick-prev:hover,
+.lsx-to-slider .slick-prev:focus-visible,
+.lsx-to-slider .slick-next:hover,
+.lsx-to-slider .slick-next:focus-visible {
+	background-image: url('./assets/icons/slider-button-hover.svg') !important;
+}
+
+/* Slider dots */
+.lsx-to-slider .slick-dots {
+	position: static !important;
+	left: auto !important;
+	right: auto !important;
+	transform: none !important;
+	width: max-content !important;
+	margin: var(--wp--preset--spacing--30) auto 0 !important;
+	padding: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: var(--wp--preset--spacing--20) !important;
+	list-style: none !important;
+}
+
+/* @media (min-width: 782px) {
+	.lsx-to-slider .slick-dots {
+		display: none !important;
+	}
+} */
+
+.lsx-to-slider .slick-dots li {
+	margin: 0 !important;
+	padding: 0 !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
+
+.lsx-to-slider .slick-dots li button::before {
+	content: none !important;
+}
+
+.lsx-to-slider .slick-dots li button {
+	width: 12px !important;
+	height: 12px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: block;
+	border: 0 !important;
+	border-radius: 999px !important;
+	background: var(--wp--preset--color--primary-accent) !important;
+	cursor: pointer;
+	overflow: hidden;
+	text-indent: -9999px;
+	transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.lsx-to-slider .slick-dots li.slick-active button,
+.lsx-to-slider .slick-dots li button:hover,
+.lsx-to-slider .slick-dots li button:focus-visible {
+	width: 32px !important;
+	background: var(--wp--preset--color--primary) !important;
+}
+
+.lsx-to-slider .slick-dots li button:focus-visible {
+	outline: 2px solid var(--wp--preset--color--primary);
+	outline-offset: 2px;
+}
