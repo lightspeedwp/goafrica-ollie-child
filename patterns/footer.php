@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: footer
- * Slug: footer
+ * Slug: goafrica-ollie-child/footer
  * Inserter: no
  */
 ?>
