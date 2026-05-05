@@ -1,0 +1,102 @@
+<!-- wp:template-part {"slug":"header-2","theme":"go-africa-ollie-child","area":"header"} /-->
+
+<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"has-text-color has-link-color is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-text-color has-link-color is-style-default has-primary-light-background-color has-background"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">
+    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"small","layout":{"type":"default"}} -->
+    <div class="wp-block-group alignwide is-style-default has-small-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|medium"}}},"backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-primary-light-background-color has-background"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--medium)">
+    <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|large"}},"layout":{"type":"constrained","justifyContent":"left"}} -->
+    <div class="wp-block-group alignwide">
+        <!-- wp:query-title {"type":"search","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} /-->
+
+        <!-- wp:search {"label":"","placeholder":"Search again...","buttonText":"Search again","buttonUseIcon":true,"style":{"border":{"radius":{"topLeft":"var:preset|border-radius|sm","topRight":"var:preset|border-radius|sm","bottomLeft":"var:preset|border-radius|sm","bottomRight":"var:preset|border-radius|sm"}}},"backgroundColor":"primary-alt","fontSize":"base"} /-->
+    </div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","className":"is-style-ga-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
+<main class="wp-block-group is-style-ga-page-section-default has-primary-light-background-color has-background"
+    style="margin-top:0;margin-bottom:0">
+    <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[],"perPage":15},"align":"wide","layout":{"type":"default"}} -->
+    <div class="wp-block-query alignwide">
+        <!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
+        <!-- wp:group {"metadata":{"name":"Blog Card","patternName":"go-africa-ollie-child/ga-blog-card"},"className":"overflow-hidden is-style-ga-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"backgroundColor":"base","layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
+        <div aria-label="Tour Card"
+            class="wp-block-group overflow-hidden is-style-ga-tour-card has-base-background-color has-background"
+            style="border-radius:0.5rem">
+            <!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#f3ebef","isUserOverlayColor":false,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-cover is-light has-custom-content-position is-position-top-left"><span
+                    aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"
+                    style="background-color:#f3ebef"></span>
+                <div class="wp-block-cover__inner-container">
+                    <!-- wp:post-terms {"term":"travel-style","separator":"   ","className":"is-style-term-button ga-tour-card-badges","style":{"border":{"radius":{"topLeft":"0","topRight":"0","bottomLeft":"0","bottomRight":"0"}}}} /-->
+                </div>
+            </div>
+            <!-- /wp:cover -->
+
+            <!-- wp:group {"metadata":{"name":"Content"},"style":{"spacing":{"padding":{"right":"var:preset|spacing|small","left":"var:preset|spacing|small","top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"},"blockGap":"var:preset|spacing|small"}},"layout":{"type":"default"}} -->
+            <div class="wp-block-group"
+                style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)">
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group">
+                    <!-- wp:post-terms {"term":"category","className":"is-style-default","style":{"typography":{"textTransform":"uppercase"},"elements":{"link":{"color":{"text":"var:preset|color|primary"},":hover":{"color":{"text":"var:preset|color|primary-alt-accent"}}}}},"fontSize":"x-small"} /-->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Title"},"className":"center-vertically","style":{"dimensions":{"minHeight":"0rem"},"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left","verticalAlignment":"top"}} -->
+                <div class="wp-block-group center-vertically" style="min-height:0rem;padding-top:0;padding-bottom:0">
+                    <!-- wp:post-title {"textAlign":"left","level":3,"isLink":true,"style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}},"color":{"text":"var:preset|color|main"}}},"typography":{"lineHeight":"1.25"}},"textColor":"main","fontSize":"medium"} /-->
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:group {"metadata":{"name":"Excerpt"},"className":"lsx-tour-info","style":{"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"},"blockGap":"0"},"border":{"top":{"width":"0px","style":"none"},"bottom":{"width":"0px","style":"none"}}},"fontSize":"medium","layout":{"type":"default"},"ariaLabel":"Tour details"} -->
+                <div aria-label="Tour details" class="wp-block-group lsx-tour-info has-medium-font-size"
+                    style="border-top-style:none;border-top-width:0px;border-bottom-style:none;border-bottom-width:0px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+                    <!-- wp:post-excerpt {"excerptLength":25,"className":"is-style-excerpt-truncate-4","fontSize":"small"} /-->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
+
+        <!-- wp:group {"metadata":{"name":"Pagination Desktop"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|medium","right":"var:preset|spacing|medium"}}},"layout":{"type":"constrained"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"medium":false,"small":true}}}}]}} -->
+        <div class="wp-block-group alignwide"
+            style="padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--medium)">
+            <!-- wp:query-pagination {"paginationArrow":"chevron","align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+            <!-- wp:query-pagination-previous {"label":"Previous","hoverTextColor":"primary-alt-light","hoverBackgroundColor":"primary"} /-->
+
+            <!-- wp:query-pagination-numbers {"midSize":1,"hoverTextColor":"base","hoverBackgroundColor":"primary"} /-->
+
+            <!-- wp:query-pagination-next {"label":"Next","hoverTextColor":"base","hoverBackgroundColor":"primary"} /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"metadata":{"name":"Pagination Mobile"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}}},"layout":{"type":"constrained"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"large":true,"medium":true}}}}]}} -->
+        <div class="wp-block-group alignwide"
+            style="padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">
+            <!-- wp:query-pagination {"paginationArrow":"chevron","showLabel":false,"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+            <!-- wp:query-pagination-previous {"label":"Previous"} /-->
+
+            <!-- wp:query-pagination-numbers {"midSize":0} /-->
+
+            <!-- wp:query-pagination-next {"label":"Next"} /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer-2","theme":"go-africa-ollie-child","area":"footer"} /-->
