@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: GA Accommodation Card
- * Slug: go-africa-ollie-child/ga-accommodation-card
+ * Slug: ga-accommodation-card
  * Inserter: yes
  */
 ?>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Destination Home card
- * Slug: go-africa-ollie-child/ga-destination-home
+ * Slug: ga-destination-home
  * Inserter: yes
  */
 ?>

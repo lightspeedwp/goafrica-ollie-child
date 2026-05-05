@@ -1,15 +1,15 @@
 <?php
 /**
  * Title: footer
- * Slug: go-africa-ollie-child/footer
+ * Slug: footer
  * Inserter: no
  */
 ?>
-<!-- wp:group {"metadata":{"name":"footer","patternName":"go-africa-ollie-child/footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|medium","right":"var:preset|spacing|medium","left":"var:preset|spacing|medium"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|medium"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"main","textColor":"base","layout":{"inherit":true,"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"footer"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|medium","right":"var:preset|spacing|medium","left":"var:preset|spacing|medium"},"margin":{"top":"0px"},"blockGap":"var:preset|spacing|medium"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"main","textColor":"base","layout":{"inherit":true,"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-color has-main-background-color has-text-color has-background has-link-color" style="margin-top:0px;padding-top:var(--wp--preset--spacing--x-large);padding-right:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);padding-left:var(--wp--preset--spacing--medium)"><!-- wp:columns {"metadata":{"name":"Footer Columns"},"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|x-large","left":"var:preset|spacing|x-large"}}}} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:image {"id":1302,"sizeSlug":"full","linkDestination":"none"} -->
-<figure class="wp-block-image size-full"><img src="http://localhost:8898/wp-content/uploads/2026/04/Icon-GoAfrica.nl_.png" alt="" class="wp-image-1302"/></figure>
+<div class="wp-block-column"><!-- wp:image {"id":52681,"sizeSlug":"full","linkDestination":"none"} -->
+<figure class="wp-block-image size-full"><img src="https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/GoAfrica-Logo-White.png" alt="" class="wp-image-52681"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"textColor":"main-accent","fontSize":"small"} -->
@@ -48,8 +48,8 @@
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:social-links {"iconColor":"border-light","iconColorValue":"#E8E1D8","iconBackgroundColor":"base","iconBackgroundColorValue":"#fff","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"layout":{"type":"flex","justifyContent":"left"},"hoverTextColor":"primary-alt"} -->
-<ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"twitter"} /-->
+<!-- wp:social-links {"iconColor":"border-light","iconColorValue":"#E8E1D8","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|small","left":"var:preset|spacing|small"}}},"layout":{"type":"flex","justifyContent":"left"},"hoverTextColor":"primary-alt"} -->
+<ul class="wp-block-social-links has-icon-color is-style-logos-only"><!-- wp:social-link {"url":"#","service":"twitter"} /-->
 
 <!-- wp:social-link {"url":"#","service":"instagram"} /-->
 
@@ -67,17 +67,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"textColor":"main-accent","fontSize":"small","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":4,"overlayMenu":"never","hoverTextColor":"primary-alt","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
-<!-- /wp:group --></div>
-<!-- /wp:column -->
-
-<!-- wp:column {"metadata":{"name":"Nav Column"}} -->
-<div class="wp-block-column"><!-- wp:heading {"level":4} -->
-<h4 class="wp-block-heading">Meer informatie</h4>
-<!-- /wp:heading -->
-
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"textColor":"main-accent","fontSize":"small","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":4,"overlayMenu":"never","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
+<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":38025,"overlayMenu":"never","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -87,7 +77,7 @@
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"textColor":"main-accent","fontSize":"small","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":4,"overlayMenu":"never","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
+<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":38025,"overlayMenu":"never","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
@@ -97,7 +87,17 @@
 <!-- /wp:heading -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"textColor":"main-accent","fontSize":"small","layout":{"type":"constrained"}} -->
-<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":4,"overlayMenu":"never","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
+<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":38025,"overlayMenu":"never","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"metadata":{"name":"Nav Column"}} -->
+<div class="wp-block-column"><!-- wp:heading {"level":4} -->
+<h4 class="wp-block-heading">Contact</h4>
+<!-- /wp:heading -->
+
+<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"textColor":"main-accent","fontSize":"small","layout":{"type":"constrained"}} -->
+<div class="wp-block-group has-main-accent-color has-text-color has-small-font-size"><!-- wp:navigation {"ref":38026,"overlayMenu":"never","className":"is-style-footer-nav","layout":{"type":"flex","orientation":"vertical"}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
@@ -111,7 +111,7 @@
 <!-- wp:group {"metadata":{"name":"Footer Subnav"},"align":"wide"} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"},"elements":{"link":{"color":{"text":"var:preset|color|main-accent"}}}},"textColor":"main-accent","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group has-main-accent-color has-text-color has-link-color"><!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"300"}},"fontSize":"x-small"} -->
-<p class="has-x-small-font-size" style="font-style:normal;font-weight:300">© 2026 GoAfrica.nl. Alle rechten voorbehouden.</p>
+<p class="has-x-small-font-size" style="font-style:normal;font-weight:300">©&nbsp;2026&nbsp;GoAfrica.nl. Alle rechten voorbehouden.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"fontSize":"small","layout":{"type":"flex","flexWrap":"wrap"}} -->

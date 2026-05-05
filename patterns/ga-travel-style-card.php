@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Travel Style Card
- * Slug: go-africa-ollie-child/ga-travel-style-card
+ * Slug: ga-travel-style-card
  * Inserter: yes
  */
 ?>

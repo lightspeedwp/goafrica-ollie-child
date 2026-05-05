@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: GA Blog Card
- * Slug: go-africa-ollie-child/ga-blog-card
+ * Slug: ga-blog-card
  * Inserter: yes
  */
 ?>

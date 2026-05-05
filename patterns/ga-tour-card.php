@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Tour Card
- * Slug: go-africa-ollie-child/ga-tour-card
+ * Slug: ga-tour-card
  * Inserter: yes
  */
 ?>
