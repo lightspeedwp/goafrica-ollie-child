@@ -130,6 +130,10 @@ Tags:
 	outline-offset: 2px;
 }
 
+.lsx-to-slider .lsx-travel-information-wrapper .slick-list {
+	padding: var(--wp--preset--spacing--20) !important;
+}
+
 
 /* ========================================================================== */
 
