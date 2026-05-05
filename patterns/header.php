@@ -1,7 +1,8 @@
 <?php
 /**
  * Title: header
- * Slug: goafrica-ollie-child/header
+ * Slug: header
+ * Theme: goafrica-ollie-child
  * Inserter: no
  */
 ?>
