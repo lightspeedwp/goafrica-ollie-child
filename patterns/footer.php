@@ -2,7 +2,7 @@
 /**
  * Title: footer
  * Slug: footer
- * Theme: goafrica-ollie-child
+ * Theme: go-africa-ollie-child
  * Inserter: no
  */
 ?>
