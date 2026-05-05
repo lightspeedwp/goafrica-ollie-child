@@ -1,155 +1,409 @@
-<!-- wp:group {"align":"wide","className":"fast-fact","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|30"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide fast-fact" style="border-radius:0.5rem;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Fast Facts</h3>
-<!-- /wp:heading -->
+<!-- wp:group {"align":"wide","className":"fast-fact","style":{"border":{"radius":"0.5rem","width":"2px"},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small","right":"var:preset|spacing|small"}}},"borderColor":"primary-accent","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide fast-fact has-border-color has-primary-accent-border-color"
+    style="border-width:2px;border-radius:0.5rem;padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)">
+    <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
+    <h2 class="wp-block-heading has-primary-color has-text-color has-link-color"
+        style="font-style:normal;font-weight:500">Fast Facts</h2>
+    <!-- /wp:heading -->
 
-<!-- wp:group {"className":"fast-facts-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"medium","layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group fast-facts-wrapper has-medium-font-size"><!-- wp:group {"metadata":{"name":"Rating"},"className":"lsx-rating-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-rating-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"ratingIcon"} /--></div>
-<!-- /wp:group -->
+    <!-- wp:group {"className":"fast-facts-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+    <div class="wp-block-group fast-facts-wrapper">
+        <!-- wp:group {"metadata":{"name":"Rating"},"className":"lsx-duration-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-duration-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M239.18,97.26A16.38,16.38,0,0,0,224.92,86l-59-4.76L143.14,26.15a16.36,16.36,0,0,0-30.27,0L90.11,81.23,31.08,86a16.46,16.46,0,0,0-9.37,28.86l45,38.83L53,211.75a16.38,16.38,0,0,0,24.5,17.82L128,198.49l50.53,31.08A16.4,16.4,0,0,0,203,211.75l-13.76-58.07,45-38.83A16.43,16.43,0,0,0,239.18,97.26Zm-15.34,5.47-48.7,42a8,8,0,0,0-2.56,7.91l14.88,62.8a.37.37,0,0,1-.17.48c-.18.14-.23.11-.38,0l-54.72-33.65a8,8,0,0,0-8.38,0L69.09,215.94c-.15.09-.19.12-.38,0a.37.37,0,0,1-.17-.48l14.88-62.8a8,8,0,0,0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16A8,8,0,0,0,103,91.86l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153,91.86a8,8,0,0,0,6.75,4.92l63.92,5.16c.15,0,.24,0,.33.29S224,102.63,223.84,102.73Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating"}}}},"prefix":"Rating:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Rating</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating_type"}}}}} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+                <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"rating_type"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Number of Rooms"},"className":"lsx-number-of-rooms-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-number-of-rooms-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"accommodationIcon"} /--></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Number of Rooms"},"className":"lsx-destination-to-tour-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-destination-to-tour-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"number_of_rooms"}}}},"prefix":"Number of units:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Number of units</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"Single Supplement"},"className":"lsx-single-supplement-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-single-supplement-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"singleSupplementIcon"} /--></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"number_of_rooms"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"single_supplement"}}}},"prefix":"Single supplement:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Single Supplement"},"className":"lsx-group-size-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-group-size-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M256,136a8,8,0,0,1-8,8H232v16a8,8,0,0,1-16,0V144H200a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,256,136Zm-57.87,58.85a8,8,0,0,1-12.26,10.3C165.75,181.19,138.09,168,108,168s-57.75,13.19-77.87,37.15a8,8,0,0,1-12.25-10.3c14.94-17.78,33.52-30.41,54.17-37.17a68,68,0,1,1,71.9,0C164.6,164.44,183.18,177.07,198.13,194.85ZM108,152a52,52,0,1,0-52-52A52.06,52.06,0,0,0,108,152Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"metadata":{"name":"Check In Time"},"className":"lsx-checkin-time-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-checkin-time-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"checkInAccommodationIcon"} /--></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Single Supplement</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkin_time"}}}},"prefix":"Check in time:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"single_supplement"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Check Out Time"},"className":"lsx-checkout-time-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-checkout-time-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"checkInAccommodationIcon"} /--></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Check In Time"},"className":"lsx-single-supplement-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-single-supplement-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm88-24a8,8,0,0,0-8,8V82c-6.35-7.36-12.83-14.45-20.12-21.83a96,96,0,1,0-2,137.7,8,8,0,0,0-11-11.64A80,80,0,1,1,184.54,71.4C192.68,79.64,199.81,87.58,207,96H184a8,8,0,0,0,0,16h40a8,8,0,0,0,8-8V64A8,8,0,0,0,224,56Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkout_time"}}}},"prefix":"Check out time:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Check in time</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"Minimum Child Age"},"className":"lsx-minimum-child-age-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-minimum-child-age-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"minimumChildAgeIcon"} /--></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkin_time"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"minimum_child_age"}}}},"prefix":"Minimum child age:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Check Out Time"},"className":"lsx-checkout-time-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-checkout-time-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M136,80v43.47l36.12,21.67a8,8,0,0,1-8.24,13.72l-40-24A8,8,0,0,1,120,128V80a8,8,0,0,1,16,0Zm-8-48A95.44,95.44,0,0,0,60.08,60.15C52.81,67.51,46.35,74.59,40,82V64a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H72a8,8,0,0,0,0-16H49c7.15-8.42,14.27-16.35,22.39-24.57a80,80,0,1,1,1.66,114.75,8,8,0,1,0-11,11.64A96,96,0,1,0,128,32Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"metadata":{"name":"Location"},"className":"lsx-destination-to-accommodation-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top","flexWrap":"nowrap"}} -->
-<div class="wp-block-group lsx-destination-to-accommodation-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"destinationIcon"} /--></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Check out time</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_accommodation"}}}},"prefix":"Location:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"checkout_time"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Spoken Languages"},"className":"lsx-spoken-languages-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-spoken-languages-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"spokenLanguagesIcon"} /--></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Minimum Child Age"},"className":"lsx-minimum-child-age-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-minimum-child-age-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M160,32h-8a16,16,0,0,0-16,16v56H55.2A40.07,40.07,0,0,0,16,72a8,8,0,0,0,0,16,24,24,0,0,1,24,24,80.09,80.09,0,0,0,80,80h40a80,80,0,0,0,0-160Zm63.48,72H166.81l41.86-33.49A63.73,63.73,0,0,1,223.48,104ZM160,48a63.59,63.59,0,0,1,36.69,11.61L152,95.35V48Zm0,128H120a64.09,64.09,0,0,1-63.5-56h167A64.09,64.09,0,0,1,160,176Zm-56,48a16,16,0,1,1-16-16A16,16,0,0,1,104,224Zm104,0a16,16,0,1,1-16-16A16,16,0,0,1,208,224Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"spoken_languages"}}}},"prefix":"Spoken Languages:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Minimum child age</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"Travel Styles"},"className":"lsx-travel-style-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-travel-style-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"travelStyleIcon"} /--></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"minimum_child_age"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:post-terms {"term":"travel-style","prefix":"Travel Styles:","fontSize":"medium"} /--></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Location"},"className":"lsx-destination-to-accommodation-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-destination-to-accommodation-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.62,87.62,0,0,1-6.4,32.94l-44.7-27.49a15.92,15.92,0,0,0-6.24-2.23l-22.82-3.08a16.11,16.11,0,0,0-16,7.86h-8.72l-3.8-7.86a15.91,15.91,0,0,0-11-8.67l-8-1.73L96.14,104h16.71a16.06,16.06,0,0,0,7.73-2l12.25-6.76a16.62,16.62,0,0,0,3-2.14l26.91-24.34A15.93,15.93,0,0,0,166,49.1l-.36-.65A88.11,88.11,0,0,1,216,128ZM143.31,41.34,152,56.9,125.09,81.24,112.85,88H96.14a16,16,0,0,0-13.88,8l-8.73,15.23L63.38,84.19,74.32,58.32a87.87,87.87,0,0,1,69-17ZM40,128a87.53,87.53,0,0,1,8.54-37.8l11.34,30.27a16,16,0,0,0,11.62,10l21.43,4.61L96.74,143a16.09,16.09,0,0,0,14.4,9h1.48l-7.23,16.23a16,16,0,0,0,2.86,17.37l.14.14L128,205.94l-1.94,10A88.11,88.11,0,0,1,40,128Zm102.58,86.78,1.13-5.81a16.09,16.09,0,0,0-4-13.9,1.85,1.85,0,0,1-.14-.14L120,174.74,133.7,144l22.82,3.08,45.72,28.12A88.18,88.18,0,0,1,142.58,214.78Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"metadata":{"name":"Accommodation Type"},"className":"lsx-accommodation-type-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-accommodation-type-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"accommodationTypeIcon"} /--></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Location</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:post-terms {"term":"accommodation-type","prefix":"Accommodation Type:","fontSize":"medium"} /--></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"destination_to_accommodation"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Friendly"},"className":"lsx-suggested-visitor-types-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-suggested-visitor-types-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconName":"suggestedVisitorTypesIcon"} /--></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Spoken Languages"},"className":"lsx-group-size-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-group-size-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.76,87.76,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"suggested_visitor_types"}}}},"prefix":"Friendly:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Spoken Languages</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"Special Interests"},"className":"lsx-special-interests-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-special-interests-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"specialInterestsIcon"} /--></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"spoken_languages"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"special_interests"}}}},"prefix":"Special interests:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Travel styles"},"className":"lsx-single-supplement-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-single-supplement-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M249.94,120.24l-27.05-6.76a95.86,95.86,0,0,0-80.37-80.37l-6.76-27a8,8,0,0,0-15.52,0l-6.76,27.05a95.86,95.86,0,0,0-80.37,80.37l-27,6.76a8,8,0,0,0,0,15.52l27.05,6.76a95.86,95.86,0,0,0,80.37,80.37l6.76,27.05a8,8,0,0,0,15.52,0l6.76-27.05a95.86,95.86,0,0,0,80.37-80.37l27.05-6.76a8,8,0,0,0,0-15.52Zm-95.49,22.9L139.31,128l15.14-15.14L215,128Zm-52.9,0L41,128l60.57-15.14L116.69,128ZM205.77,109.2,158.6,97.4,146.8,50.23A79.88,79.88,0,0,1,205.77,109.2Zm-62.63-7.65L128,116.69l-15.14-15.14L128,41ZM109.2,50.23,97.4,97.4,50.23,109.2A79.88,79.88,0,0,1,109.2,50.23Zm-59,96.57L97.4,158.6l11.8,47.17A79.88,79.88,0,0,1,50.23,146.8Zm62.63,7.65L128,139.31l15.14,15.14L128,215Zm33.94,51.32,11.8-47.17,47.17-11.8A79.88,79.88,0,0,1,146.8,205.77Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:lsx-tour-operator/modal-button {"text":"Enquire","modalId":"modal-enquiry","width":100} -->
-<div class="wp-block-lsx-tour-operator-modal-button wp-block-buttons"><div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link" href="#to-modal-modal-enquiry" aria-haspopup="dialog" aria-controls="to-modal-modal-enquiry">Enquire</a></div></div>
-<!-- /wp:lsx-tour-operator/modal-button --></div>
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Travel Styles</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:post-terms {"term":"travel-style","prefix":" ","fontSize":"base"} /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"metadata":{"name":"Accommodation Type"},"className":"lsx-accommodation-type-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-accommodation-type-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
+
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Accommodation Type</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:post-terms {"term":"accommodation-type","fontSize":"base"} /--></div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"metadata":{"name":"Friendly"},"className":"lsx-suggested-visitor-types-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-suggested-visitor-types-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M152,80a32,32,0,1,0-32-32A32,32,0,0,0,152,80Zm0-48a16,16,0,1,1-16,16A16,16,0,0,1,152,32Zm48,112v88a8,8,0,0,1-16,0V151.66c-25.75-2.25-34.35-15.52-42-27.36-2.85-4.39-5.56-8.57-9.13-12.19l-13.4,30.81,37.2,26.57A8,8,0,0,1,160,176v56a8,8,0,0,1-16,0V180.12l-31.07-22.2L79.34,235.19A8,8,0,0,1,72,240a7.84,7.84,0,0,1-3.19-.67,8,8,0,0,1-4.14-10.52L122.19,96.5a8,8,0,0,1,11-3.92,40.92,40.92,0,0,1,8,5.47c6.37,5.52,10.51,11.91,14.16,17.55,7.68,11.84,13.22,20.4,36.6,20.4A8,8,0,0,1,200,144ZM72,152a8,8,0,0,0,7.35-4.85l24-56a8,8,0,0,0-4.2-10.5l-28-12a8,8,0,0,0-10.5,4.2l-24,56a8,8,0,0,0,4.2,10.5l28,12A8,8,0,0,0,72,152ZM54.51,127.8,72.2,86.5l13.3,5.7L67.8,133.49Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
+
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Suggest visitor types</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"suggested_visitor_types"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"metadata":{"name":"Special Interests"},"className":"lsx-special-interests-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-special-interests-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M112,80a16,16,0,1,1,16,16A16,16,0,0,1,112,80ZM64,80a64,64,0,0,1,128,0c0,59.95-57.58,93.54-60,94.95a8,8,0,0,1-7.94,0C121.58,173.54,64,140,64,80Zm16,0c0,42.2,35.84,70.21,48,78.5,12.15-8.28,48-36.3,48-78.5a48,48,0,0,0-96,0Zm122.77,67.63a8,8,0,0,0-5.54,15C213.74,168.74,224,176.92,224,184c0,13.36-36.52,32-96,32s-96-18.64-96-32c0-7.08,10.26-15.26,26.77-21.36a8,8,0,0,0-5.54-15C29.22,156.49,16,169.41,16,184c0,31.18,57.71,48,112,48s112-16.82,112-48C240,169.41,226.78,156.49,202.77,147.63Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
+
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Special interests</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"special_interests"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:buttons -->
+    <div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-ga-cta-button"} -->
+        <div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-ga-cta-button"><a
+                class="wp-block-button__link wp-element-button" href="/contact/">Vraag
+                offerte aan</a></div>
+        <!-- /wp:button -->
+    </div>
+    <!-- /wp:buttons -->
+</div>
 <!-- /wp:group -->

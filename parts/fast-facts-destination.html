@@ -1,57 +1,148 @@
-<!-- wp:group {"align":"wide","className":"fast-fact","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|30"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide fast-fact" style="border-radius:0.5rem;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Fast Facts</h3>
-<!-- /wp:heading -->
+<!-- wp:group {"align":"wide","className":"fast-fact","style":{"border":{"radius":"0.5rem","width":"2px"},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small","left":"var:preset|spacing|small","right":"var:preset|spacing|small"}}},"borderColor":"primary-accent","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide fast-fact has-border-color has-primary-accent-border-color"
+    style="border-width:2px;border-radius:0.5rem;padding-top:var(--wp--preset--spacing--small);padding-right:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small);padding-left:var(--wp--preset--spacing--small)">
+    <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary"} -->
+    <h2 class="wp-block-heading has-primary-color has-text-color has-link-color"
+        style="font-style:normal;font-weight:500">Fast Facts</h2>
+    <!-- /wp:heading -->
 
-<!-- wp:group {"className":"fast-facts-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"fontSize":"medium","layout":{"type":"flex","orientation":"vertical"}} -->
-<div class="wp-block-group fast-facts-wrapper has-medium-font-size"><!-- wp:group {"metadata":{"name":"Country"},"className":"facts-country-query-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top"}} -->
-<div class="wp-block-group facts-country-query-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"destinationIcon"} /--></div>
-<!-- /wp:group -->
+    <!-- wp:group {"className":"fast-facts-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+    <div class="wp-block-group fast-facts-wrapper">
+        <!-- wp:group {"metadata":{"name":"Country"},"className":"lsx-duration-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-duration-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.62,87.62,0,0,1-6.4,32.94l-44.7-27.49a15.92,15.92,0,0,0-6.24-2.23l-22.82-3.08a16.11,16.11,0,0,0-16,7.86h-8.72l-3.8-7.86a15.91,15.91,0,0,0-11-8.67l-8-1.73L96.14,104h16.71a16.06,16.06,0,0,0,7.73-2l12.25-6.76a16.62,16.62,0,0,0,3-2.14l26.91-24.34A15.93,15.93,0,0,0,166,49.1l-.36-.65A88.11,88.11,0,0,1,216,128ZM143.31,41.34,152,56.9,125.09,81.24,112.85,88H96.14a16,16,0,0,0-13.88,8l-8.73,15.23L63.38,84.19,74.32,58.32a87.87,87.87,0,0,1,69-17ZM40,128a87.53,87.53,0,0,1,8.54-37.8l11.34,30.27a16,16,0,0,0,11.62,10l21.43,4.61L96.74,143a16.09,16.09,0,0,0,14.4,9h1.48l-7.23,16.23a16,16,0,0,0,2.86,17.37l.14.14L128,205.94l-1.94,10A88.11,88.11,0,0,1,40,128Zm102.58,86.78,1.13-5.81a16.09,16.09,0,0,0-4-13.9,1.85,1.85,0,0,1-.14-.14L120,174.74,133.7,144l22.82,3.08,45.72,28.12A88.18,88.18,0,0,1,142.58,214.78Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"post_parent"}}}},"prefix":"Country:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Country</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"metadata":{"name":"Regions"},"className":"facts-regions-query-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top"}} -->
-<div class="wp-block-group facts-regions-query-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"destinationIcon"} /--></div>
-<!-- /wp:group -->
+                <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"post_parent"}}}},"fontSize":"base","prefixBold":true} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"post_children"}}}},"prefix":"Regions:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Regions"},"className":"lsx-destination-to-tour-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-destination-to-tour-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M228.92,49.69a8,8,0,0,0-6.86-1.45L160.93,63.52,99.58,32.84a8,8,0,0,0-5.52-.6l-64,16A8,8,0,0,0,24,56V200a8,8,0,0,0,9.94,7.76l61.13-15.28,61.35,30.68A8.15,8.15,0,0,0,160,224a8,8,0,0,0,1.94-.24l64-16A8,8,0,0,0,232,200V56A8,8,0,0,0,228.92,49.69ZM104,52.94l48,24V203.06l-48-24ZM40,62.25l48-12v127.5l-48,12Zm176,131.5-48,12V78.25l48-12Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"metadata":{"name":"Spoken Languages"},"className":"lsx-spoken-languages-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-spoken-languages-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"spokenLanguagesIcon"} /--></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Regions</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"spoken_languages"}}}},"prefix":"Spoken Languages:","prefixBold":true} -->
-<p></p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-connection","args":{"key":"post_children"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Travel Styles"},"className":"lsx-travel-style-wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","verticalAlignment":"top"}} -->
-<div class="wp-block-group lsx-travel-style-wrapper"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"middle"}} -->
-<div class="wp-block-group"><!-- wp:lsx-tour-operator/icons {"iconType":"solid","iconName":"travelStyleIcon"} /--></div>
-<!-- /wp:group -->
+        <!-- wp:group {"metadata":{"name":"Spoken Languages"},"className":"lsx-group-size-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-group-size-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.76,87.76,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
 
-<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:post-terms {"term":"travel-style","prefix":"Travel Styles: ","fontSize":"medium","prefixBold":true} /--></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Spoken Languages</p>
+                <!-- /wp:paragraph -->
 
-<!-- wp:lsx-tour-operator/modal-button {"text":"Enquire","modalId":"modal-enquiry","width":100} -->
-<div class="wp-block-lsx-tour-operator-modal-button wp-block-buttons"><div class="wp-block-button has-custom-width wp-block-button__width-100"><a class="wp-block-button__link" href="#to-modal-modal-enquiry" aria-haspopup="dialog" aria-controls="to-modal-modal-enquiry">Enquire</a></div></div>
-<!-- /wp:lsx-tour-operator/modal-button --></div>
+                <!-- wp:group {"fontSize":"base","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group has-base-font-size">
+                    <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"spoken_languages"}}}},"fontSize":"base"} -->
+                    <p class="has-base-font-size"></p>
+                    <!-- /wp:paragraph -->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:group {"metadata":{"name":"Travel styles"},"className":"lsx-single-supplement-wrapper","style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group lsx-single-supplement-wrapper">
+            <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"40px"} -->
+            <div class="wp-block-outermost-icon-block">
+                <div class="icon-container has-icon-color has-primary-alt-color"
+                    style="color:#DD4611;width:40px;transform:rotate(0deg) scaleX(1) scaleY(1)"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                        <path
+                            d="M249.94,120.24l-27.05-6.76a95.86,95.86,0,0,0-80.37-80.37l-6.76-27a8,8,0,0,0-15.52,0l-6.76,27.05a95.86,95.86,0,0,0-80.37,80.37l-27,6.76a8,8,0,0,0,0,15.52l27.05,6.76a95.86,95.86,0,0,0,80.37,80.37l6.76,27.05a8,8,0,0,0,15.52,0l6.76-27.05a95.86,95.86,0,0,0,80.37-80.37l27.05-6.76a8,8,0,0,0,0-15.52Zm-95.49,22.9L139.31,128l15.14-15.14L215,128Zm-52.9,0L41,128l60.57-15.14L116.69,128ZM205.77,109.2,158.6,97.4,146.8,50.23A79.88,79.88,0,0,1,205.77,109.2Zm-62.63-7.65L128,116.69l-15.14-15.14L128,41ZM109.2,50.23,97.4,97.4,50.23,109.2A79.88,79.88,0,0,1,109.2,50.23Zm-59,96.57L97.4,158.6l11.8,47.17A79.88,79.88,0,0,1,50.23,146.8Zm62.63,7.65L128,139.31l15.14,15.14L128,215Zm33.94,51.32,11.8-47.17,47.17-11.8A79.88,79.88,0,0,1,146.8,205.77Z">
+                        </path>
+                    </svg></div>
+            </div>
+            <!-- /wp:outermost/icon-block -->
+
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group">
+                <!-- wp:paragraph {"className":"is-style-ga-uppercase-bold","style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}}},"textColor":"secondary","fontSize":"x-small"} -->
+                <p class="is-style-ga-uppercase-bold has-secondary-color has-text-color has-link-color has-x-small-font-size"
+                    style="font-style:normal;font-weight:400">Travel Styles</p>
+                <!-- /wp:paragraph -->
+
+                <!-- wp:post-terms {"term":"travel-style","prefix":" ","fontSize":"base"} /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:buttons -->
+    <div class="wp-block-buttons"><!-- wp:button {"width":100,"className":"is-style-ga-cta-button"} -->
+        <div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-ga-cta-button"><a
+                class="wp-block-button__link wp-element-button" href="/contact/">Vraag
+                offerte aan</a></div>
+        <!-- /wp:button -->
+    </div>
+    <!-- /wp:buttons -->
+</div>
 <!-- /wp:group -->
