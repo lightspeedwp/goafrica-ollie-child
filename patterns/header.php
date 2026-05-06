@@ -2,7 +2,7 @@
 /**
  * Title: header
  * Slug: header
- * Theme: go-africa-ollie-child
+ * Theme: goafrica-ollie-child
  * Inserter: no
  */
 ?>
