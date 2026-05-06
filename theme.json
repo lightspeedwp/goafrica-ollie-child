@@ -267,18 +267,18 @@
 				{
 					"fluid": {
 						"min": "1.2rem",
-						"max": "1.65rem"
+						"max": "1.40rem"
 					},
-					"size": "1.65rem",
+					"size": "1.40rem",
 					"slug": "medium",
 					"name": "Medium"
 				},
 				{
 					"fluid": {
 						"min": "1.5rem",
-						"max": "2.35rem"
+						"max": "2.20rem"
 					},
-					"size": "2.35rem",
+					"size": "2.20rem",
 					"slug": "large",
 					"name": "Large"
 				},
