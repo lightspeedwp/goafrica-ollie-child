@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Subheading Medium",
+	"slug": "ga-subheading-medium",
+	"blockTypes": [
+		"core/paragraph"
+	],
+	"description": "GoAfrica Subheading Medium Paragraph",
+	"styles": {
+		"typography": {
+            "fontSize": "var(--wp--preset--font-size--medium)",
+            "fontWeight": "500"
+        } 
+	}
+}

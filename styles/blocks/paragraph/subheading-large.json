@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Subheading Large",
+	"slug": "ga-subheading-large",
+	"blockTypes": [
+		"core/paragraph"
+	],
+	"description": "GoAfrica Subheading Large Paragraph",
+	"styles": {
+		"typography": {
+            "fontSize": "var(--wp--preset--font-size--large)",
+            "fontWeight": "500"
+        } 
+	}
+}

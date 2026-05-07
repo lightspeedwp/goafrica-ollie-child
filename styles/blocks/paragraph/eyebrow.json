@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "GA Eyebrow",
+	"slug": "ga-eyebrow",
+	"blockTypes": [
+		"core/paragraph"
+	],
+	"description": "GoAfrica Eyebrow Paragraph",
+	"styles": {
+        "typography": {
+            "fontSize": "var(--wp--preset--font-size--small)",
+            "textTransform": "uppercase",
+            "letterSpacing": "1px"
+        },
+		"spacing": {
+			"padding": {
+				"top": "6px",
+				"bottom": "6px",
+				"left": "12px",
+				"right": "12px"
+			}
+		},
+		"border": {
+            "width": "1px",
+            "style": "solid",
+            "color": "var(--wp--preset--color--primary)",
+			"radius": "3px"
+		},
+		"color": {
+			"background": "var(--wp--preset--color--primary-light)",
+			"text": "var(--wp--preset--color--primary)"
+		}
+	}
+}

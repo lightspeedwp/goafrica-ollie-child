@@ -10,6 +10,48 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Deregister Ollie parent button style variations not used by GoAfrica.
+ */
+function goafrica_child_deregister_button_styles() {
+	if ( class_exists( 'WP_Theme_JSON_Resolver' ) ) {
+		WP_Theme_JSON_Resolver::get_theme_data();
+	}
+
+	$variations = array( 'button-brand', 'button-brand-alt', 'button-dark', 'button-light', 'secondary-button' );
+	foreach ( $variations as $variation ) {
+		unregister_block_style( 'core/button', $variation );
+	}
+}
+add_action( 'wp_loaded', 'goafrica_child_deregister_button_styles', 20 );
+
+/**
+ * Remove unwanted parent button styles from the core/button style picker.
+ *
+ * @param array  $args       Block type registration arguments.
+ * @param string $block_type Block type name.
+ * @return array
+ */
+function goafrica_child_filter_core_button_styles( $args, $block_type ) {
+	if ( 'core/button' !== $block_type || empty( $args['styles'] ) || ! is_array( $args['styles'] ) ) {
+		return $args;
+	}
+
+	$styles_to_remove = array( 'button-brand', 'button-brand-alt', 'button-dark', 'button-light', 'secondary-button' );
+
+	$args['styles'] = array_values(
+		array_filter(
+			$args['styles'],
+			static function( $style ) use ( $styles_to_remove ) {
+				return empty( $style['name'] ) || ! in_array( $style['name'], $styles_to_remove, true );
+			}
+		)
+	);
+
+	return $args;
+}
+add_filter( 'register_block_type_args', 'goafrica_child_filter_core_button_styles', 20, 2 );
+
+/**
  * Enqueue front-end assets.
  */
 function goafrica_child_enqueue_scripts() {
@@ -159,3 +201,5 @@ function goafrica_child_render_ga_button_rating( $block_content, $block ) {
 	return $block_content;
 }
 add_filter( 'render_block', 'goafrica_child_render_ga_button_rating', 35, 2 );
+
+
