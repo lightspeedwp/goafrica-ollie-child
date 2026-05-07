@@ -273,14 +273,23 @@
 					"slug": "medium",
 					"name": "Medium"
 				},
+        {
+					"fluid": {
+						"min": "1.4rem",
+						"max": "1.80rem"
+					},
+					"size": "1.80rem",
+					"slug": "large",
+					"name": "Large"
+				},
 				{
 					"fluid": {
 						"min": "1.5rem",
 						"max": "2.20rem"
 					},
 					"size": "2.20rem",
-					"slug": "large",
-					"name": "Large"
+					"slug": "x-large",
+					"name": "Extra Large"
 				},
 				{
 					"fluid": {
@@ -288,8 +297,8 @@
 						"max": "2.9rem"
 					},
 					"size": "2.9rem",
-					"slug": "x-large",
-					"name": "Extra Large"
+					"slug": "xx-large",
+					"name": "Extra Extra Large"
 				},
 				{
 					"fluid": {
@@ -297,8 +306,8 @@
 						"max": "3.75rem"
 					},
 					"size": "3.75rem",
-					"slug": "xx-large",
-					"name": "Extra Extra Large"
+					"slug": "huge",
+					"name": "Huge"
 				},
         {
 					"fluid": {
