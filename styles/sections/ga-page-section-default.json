@@ -14,14 +14,14 @@
 		},
 		"spacing": {
 			"padding": {
-				"top": "var:preset|spacing|xx-large",
-				"bottom": "var:preset|spacing|xx-large"
+				"top": "var:preset|spacing|x-large",
+				"bottom": "var:preset|spacing|x-large"
 			},
 			"margin": {
 				"top": "0",
 				"bottom": "0"
 			},
-			"blockGap": "var:preset|spacing|x-large"
+			"blockGap": "var:preset|spacing|large"
 		}
 	}
 }
