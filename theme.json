@@ -381,9 +381,7 @@
 		"spacing": {
 			"blockGap": "var:preset|spacing|medium",
 			"padding": {
-				"top": "var:preset|spacing|medium",
 				"right": "var:preset|spacing|small",
-				"bottom": "var:preset|spacing|medium",
 				"left": "var:preset|spacing|small"
 			}
 		},
