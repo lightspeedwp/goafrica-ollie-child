@@ -399,21 +399,21 @@
 				"typography": {
 					"fontFamily": "var:preset|font-family|poppins",
           "fontWeight": "500",
-          "fontSize": "var:preset|font-size|xx-large"
+          "fontSize": "var:preset|font-size|huge"
 				}
 			},
 			"h2": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|poppins",
           "fontWeight": "500",
-          "fontSize": "var:preset|font-size|x-large"
+          "fontSize": "var:preset|font-size|xx-large"
 				}
 			},
 			"h3": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|poppins",
           "fontWeight": "500",
-          "fontSize": "var:preset|font-size|large"
+          "fontSize": "var:preset|font-size|x-large"
 				}
 			},
 			"h4": {
