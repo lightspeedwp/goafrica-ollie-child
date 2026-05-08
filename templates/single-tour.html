@@ -1,13 +1,6 @@
-<!-- wp:template-part {"slug":"header","theme":"goafrica-ollie-child","area":"header"} /-->
+<!-- wp:template-part {"slug":"ga-header","theme":"go-africa-ollie-child","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"is-style-default has-text-color has-link-color","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"},"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-default has-text-color has-link-color has-primary-light-background-color has-background"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"small","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide is-style-default has-small-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+<!-- wp:block {"ref":56903} /-->
 
 <!-- wp:cover {"useFeaturedImage":true,"dimRatio":70,"isUserOverlayColor":true,"minHeight":480,"customGradient":"linear-gradient(60deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 76%)","contentPosition":"bottom center","tagName":"section","metadata":{"name":"Hero"},"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"}}},"layout":{"type":"constrained"}} -->
 <section class="wp-block-cover has-custom-content-position is-position-bottom-center"
@@ -21,7 +14,7 @@
             <div class="wp-block-group">
                 <!-- wp:post-title {"textAlign":"left","level":1,"className":"wp-block-heading has-text-align-center is-style-shadow-text","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"xx-large"} /-->
 
-                <!-- wp:paragraph {"align":"left","metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}},"textColor":"base","fontSize":"small"} -->
+                <!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"lsx/post-meta","args":{"key":"tagline"}}}},"className":"has-base-color has-text-color has-link-color","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"typography":{"textAlign":"left"}},"textColor":"base","fontSize":"small"} -->
                 <p class="has-text-align-left has-base-color has-text-color has-link-color has-small-font-size"></p>
                 <!-- /wp:paragraph -->
             </div>
@@ -66,9 +59,9 @@
 </div>
 <!-- /wp:lsx-tour-operator/sticky-menu -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Overview"},"align":"wide","className":"is-style-ga-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|large"}}},"backgroundColor":"base","layout":{"type":"constrained"},"addToStickyMenu":true,"stickyMenuId":"overview","stickyMenuTitle":"Overview"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Overview"},"align":"wide","className":"is-style-ga-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|large"}}},"backgroundColor":"base","layout":{"type":"constrained"},"anchor":"overview","addToStickyMenu":true,"stickyMenuId":"overview","stickyMenuTitle":"Overview"} -->
 <section
-    class="wp-block-group alignwide is-style-ga-page-section-default has-base-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignwide is-style-ga-page-section-default lsx-to-sticky-menu-section has-base-background-color has-background lsx-to-sticky-menu-section"
     id="overview" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--large)"
     data-sticky-menu-section="true" data-section-title="Overview" role="region" aria-labelledby="overview-header">
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|large","left":"var:preset|spacing|large"}}}} -->
@@ -89,7 +82,7 @@
         <div class="wp-block-column" style="flex-basis:33.34%">
             <!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"},"stickyScrollOffset":"80px","unstickOnMobile":true} -->
             <div class="wp-block-group">
-                <!-- wp:template-part {"slug":"fast-facts-tour","theme":"goafrica-ollie-child","area":"fast-facts"} /-->
+                <!-- wp:template-part {"slug":"ga-fast-facts-tour","theme":"go-africa-ollie-child","area":"uncategorized"} /-->
             </div>
             <!-- /wp:group -->
         </div>
@@ -108,13 +101,13 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Map"},"align":"full","className":"lsx-location-wrapper is-style-ga-page-section-default","style":{"spacing":{"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"addToStickyMenu":true,"stickyMenuId":"map","stickyMenuTitle":"Map"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Map"},"align":"full","className":"lsx-location-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"anchor":"map","addToStickyMenu":true,"stickyMenuId":"map","stickyMenuTitle":"Map"} -->
 <section
-    class="wp-block-group alignfull lsx-location-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull lsx-location-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section lsx-to-sticky-menu-section"
     id="map" data-sticky-menu-section="true" data-section-title="Map" role="region" aria-labelledby="map-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontFamily":"heading"} -->
+        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"heading"} -->
         <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
             style="font-style:normal;font-weight:400">Tour Map</h2>
         <!-- /wp:heading -->
@@ -133,7 +126,7 @@
         <div class="wp-block-cover is-light lsx-map-preview" style="min-height:500px"><span aria-hidden="true"
                 class="wp-block-cover__background has-background-dim" style="background-color:#e2f0f7"></span>
             <div class="wp-block-cover__inner-container">
-                <!-- wp:paragraph {"align":"center","className":"has-text-align-center has-large-font-size","fontSize":"large"} -->
+                <!-- wp:paragraph {"className":"has-text-align-center has-large-font-size","style":{"typography":{"textAlign":"center"}},"fontSize":"large"} -->
                 <p class="has-text-align-center has-large-font-size"><a href="#">Click here to display the map</a></p>
                 <!-- /wp:paragraph -->
             </div>
@@ -153,14 +146,14 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Itinerary"},"align":"wide","className":"lsx-itinerary-wrapper is-style-ga-page-section-default","style":{"spacing":{"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"addToStickyMenu":true,"stickyMenuId":"itinerary","stickyMenuTitle":"Itinerary"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Itinerary"},"align":"wide","className":"lsx-itinerary-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"anchor":"itinerary","addToStickyMenu":true,"stickyMenuId":"itinerary","stickyMenuTitle":"Itinerary"} -->
 <section
-    class="wp-block-group alignwide lsx-itinerary-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section"
+    class="wp-block-group alignwide lsx-itinerary-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section lsx-to-sticky-menu-section"
     id="itinerary" data-sticky-menu-section="true" data-section-title="Itinerary" role="region"
     aria-labelledby="itinerary-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontFamily":"heading"} -->
+        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"heading"} -->
         <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
             style="font-style:normal;font-weight:400">Tour Itinerary</h2>
         <!-- /wp:heading -->
@@ -354,14 +347,14 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Gallery"},"className":"lsx-gallery-wrapper is-style-ga-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"addToStickyMenu":true,"stickyMenuId":"gallery","stickyMenuTitle":"Gallery"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Gallery"},"className":"lsx-gallery-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"anchor":"gallery","addToStickyMenu":true,"stickyMenuId":"gallery","stickyMenuTitle":"Gallery"} -->
 <section id="gallery"
-    class="wp-block-group lsx-gallery-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section"
+    class="wp-block-group lsx-gallery-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section lsx-to-sticky-menu-section"
     style="margin-top:0;margin-bottom:0" data-sticky-menu-section="true" data-section-title="Gallery" role="region"
     aria-labelledby="gallery-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontFamily":"heading"} -->
+        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"heading"} -->
         <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
             style="font-style:normal;font-weight:400">Gallery</h2>
         <!-- /wp:heading -->
@@ -404,13 +397,13 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Pricing"},"align":"wide","className":"is-style-ga-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"base","layout":{"type":"constrained","contentSize":""},"addToStickyMenu":true,"stickyMenuId":"pricing","stickyMenuTitle":"Pricing"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Pricing"},"align":"wide","className":"is-style-ga-page-section-default lsx-to-sticky-menu-section lsx-price-wrapper","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"backgroundColor":"base","layout":{"type":"constrained","contentSize":""},"anchor":"pricing","addToStickyMenu":true,"stickyMenuId":"pricing","stickyMenuTitle":"Pricing"} -->
 <section
-    class="wp-block-group alignwide is-style-ga-page-section-default has-base-background-color has-background lsx-to-sticky-menu-section"
+    class="wp-block-group alignwide is-style-ga-page-section-default lsx-to-sticky-menu-section lsx-price-wrapper has-base-background-color has-background lsx-to-sticky-menu-section"
     id="pricing" style="margin-top:0;margin-bottom:0" data-sticky-menu-section="true" data-section-title="Pricing"
     role="region" aria-labelledby="pricing-header">
     <!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|large","left":"var:preset|spacing|large"}}}} -->
-    <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%"} -->
+    <div class="wp-block-columns alignwide"><!-- wp:column {"width":"50%","anchor":"lsx-included-wrapper"} -->
         <div class="wp-block-column" style="flex-basis:50%" id="lsx-included-wrapper">
             <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}},"typography":{"fontStyle":"normal","fontWeight":"600"}},"textColor":"primary","fontSize":"medium"} -->
             <p class="has-primary-color has-text-color has-link-color has-medium-font-size"
@@ -449,14 +442,14 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"section","metadata":{"name":"Related Tours"},"align":"full","className":"lsx-tour-related-tour-query-wrapper is-style-ga-page-section-default","style":{"spacing":{"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"addToStickyMenu":true,"stickyMenuId":"related-tours","stickyMenuTitle":"Related Tours"} -->
+<!-- wp:group {"tagName":"section","metadata":{"name":"Related Tours"},"align":"full","className":"lsx-tour-related-tour-query-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section","style":{"spacing":{"blockGap":"var:preset|spacing|x-large"}},"layout":{"type":"constrained"},"anchor":"related-tours","addToStickyMenu":true,"stickyMenuId":"related-tours","stickyMenuTitle":"Related Tours"} -->
 <section
-    class="wp-block-group alignfull lsx-tour-related-tour-query-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section"
+    class="wp-block-group alignfull lsx-tour-related-tour-query-wrapper is-style-ga-page-section-default lsx-to-sticky-menu-section lsx-to-sticky-menu-section"
     id="related-tours" data-sticky-menu-section="true" data-section-title="Related Tours" role="region"
     aria-labelledby="related-tours-header">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:heading {"textAlign":"center","style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontFamily":"heading"} -->
+        <!-- wp:heading {"style":{"typography":{"fontStyle":"normal","fontWeight":"400","textAlign":"center"}},"fontFamily":"heading"} -->
         <h2 class="wp-block-heading has-text-align-center has-heading-font-family"
             style="font-style:normal;font-weight:400">Related tours</h2>
         <!-- /wp:heading -->
@@ -482,4 +475,4 @@
 </section>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","theme":"goafrica-ollie-child","area":"footer"} /-->
+<!-- wp:template-part {"slug":"ga-footer","theme":"go-africa-ollie-child","area":"footer"} /-->
