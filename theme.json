@@ -506,8 +506,7 @@
             "left": "10px"
           }
         },
-"css": "& .page-numbers.current { display: inline-flex; align-items: center; justify-content: center; padding-left: 16px !important; padding-right: 16px !important; padding-top: 8px !important; padding-bottom: 8px !important; line-height: 1.4; background-color: var(--wp--preset--color--primary); color: var(--wp--preset--color--base); border: 2px solid var(--wp--preset--color--primary); border-radius: 8px; box-shadow: none; }"
-
+        "css": "& .page-numbers.current { display: inline-flex; align-items: center; justify-content: center; padding-left: 16px !important; padding-right: 16px !important; padding-top: 8px !important; padding-bottom: 8px !important; line-height: 1.4; background-color: var(--wp--preset--color--primary); color: var(--wp--preset--color--base); border: 2px solid var(--wp--preset--color--primary); border-radius: 8px; box-shadow: none; }"
       },
       "core/query-pagination-previous": {
         "spacing": {
@@ -520,7 +519,6 @@
         },
         "elements": {
           "link": {
-
             "color": {
               "text": "var:preset|color|primary-alt"
             }
