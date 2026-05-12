@@ -9,7 +9,9 @@
 	"description": "Main header navigation links. Contrast text with semibold weight, hover and focus states change to primary color.",
 	"styles": {
 		"typography": {
-			"fontFamily": "var:preset|font-family|poppins"
+			"fontFamily": "var:preset|font-family|poppins",
+			"fontWeight": "500",
+			"fontSize": "var(--wp--preset--font-size--small)"
 		},
 		"elements": {
 			"link": {

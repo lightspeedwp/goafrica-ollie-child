@@ -10,7 +10,8 @@
 	"styles": {
 		"typography": {
 			"fontFamily": "var:preset|font-family|poppins",
-			"fontWeight": "500"
+			"fontWeight": "500",
+			"fontSize": "var(--wp--preset--font-size--small)"
 		},
 		"elements": {
 			"link": {
