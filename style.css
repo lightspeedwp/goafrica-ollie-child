@@ -274,3 +274,23 @@ Tags:
 	text-decoration: none !important;
 	cursor: default;
 }
+
+/* Mega Menu navigation block: font-weight 500, contrast color, brand-dark hover */
+.is-style-mega-menu-nav .wp-block-navigation__container,
+.is-style-mega-menu-nav .wp-block-navigation-item__content {
+	font-weight: 500;
+	color: var(--wp--preset--color--secondary);
+}
+
+.is-style-mega-menu-nav .wp-block-navigation-item__content:hover,
+.is-style-mega-menu-nav .wp-block-navigation-item__content:focus-visible {
+	color: var(--wp--preset--color--primary-alt-accent);
+	text-decoration: none;
+}
+
+.is-style-mega-menu-nav .current-menu-item>.wp-block-navigation-item__content,
+.is-style-mega-menu-nav .current-menu-ancestor>.wp-block-navigation-item__content {
+	color: var(--wp--preset--color--primary-alt);
+	text-decoration: none !important;
+	cursor: default;
+}
