@@ -9,7 +9,8 @@
 	"description": "Main mega menu navigation links. Contrast text with semibold weight, hover and focus states change to primary color.",
 	"styles": {
 		"typography": {
-			"fontFamily": "var:preset|font-family|poppins"
+			"fontFamily": "var:preset|font-family|poppins",
+			"fontWeight": "500"
 		},
 		"elements": {
 			"link": {
