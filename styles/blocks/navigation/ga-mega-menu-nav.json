@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"title": "Mega Menu Nav",
+	"slug": "mega-menu-nav",
+	"blockTypes": [
+		"core/navigation"
+	],
+	"description": "Main mega menu navigation links. Contrast text with semibold weight, hover and focus states change to primary color.",
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|poppins"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|secondary"
+				},
+				"typography": {
+					"textDecoration": "none"
+				}
+			}
+		},
+		"css": "& a{transition: color 200ms ease;} & a:hover{color: var(--wp--preset--color--primary); text-decoration: none;} & a:active{color: var(--wp--preset--color--primary); text-decoration: underline;} & a:focus-visible{color: var(--wp--preset--color--primary); outline: 2px solid var(--wp--preset--color--primary); outline-offset: 2px;}"
+	}
+}
