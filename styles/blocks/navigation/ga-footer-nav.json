@@ -10,7 +10,7 @@
 	"styles": {
 		"typography": {
 			"fontSize": "var:preset|font-size|small",
-			"fontWeight": "regular"
+			"fontWeight": "300"
 		},
 		"elements": {
 			"link": {
