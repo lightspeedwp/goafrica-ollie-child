@@ -28,7 +28,7 @@ Tags:
 }
 
 .wp-block-cb-carousel-v2[data-cb-pagination="true"] .swiper-horizontal {
-	margin-bottom: 0 !important;
+	margin-bottom: var(--wp--preset--spacing--medium) !important;
 }
 
 /* Position arrows vertically centered */
