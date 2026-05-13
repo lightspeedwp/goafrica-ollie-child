@@ -92,7 +92,7 @@ Tags:
 	right: auto !important;
 	transform: none !important;
 	width: max-content !important;
-	margin: var(--wp--preset--spacing--30) auto 0 !important;
+	margin: var(--wp--preset--spacing--10) auto 0 !important;
 	padding: 0 !important;
 	display: flex !important;
 	align-items: center !important;
@@ -132,6 +132,7 @@ Tags:
 	border: 0 !important;
 	border-radius: 999px !important;
 	background: var(--wp--preset--color--primary-accent) !important;
+	opacity: 1 !important;
 	cursor: pointer;
 	overflow: hidden;
 	text-indent: -9999px;
