@@ -1,12 +1,12 @@
 <?php
 /**
- * Title: GA Header
- * Slug: ga-header
+ * Title: Top Header
+ * Slug: top-header
  * Theme: goafrica-ollie-child
- * Inserter: no
+ * Inserter: true
  */
 ?>
-<!-- wp:group {"metadata":{"name":"GA Header","patternName":"ga-header"},"align":"full","className":"is-style-default","style":{"border":{"bottom":{"width":"0px","style":"none"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|small-dark","position":{"type":"sticky","top":"0px"}},"backgroundColor":"base","layout":{"type":"constrained"},"stickyOnScrollUp":true} -->
+<!-- wp:group {"metadata":{"name":"Top Header"},"align":"full","className":"is-style-default","style":{"border":{"bottom":{"width":"0px","style":"none"},"top":[],"right":[],"left":[]},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"},"blockGap":"0"},"shadow":"var:preset|shadow|small-dark","position":{"type":""}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-default has-base-background-color has-background" style="border-bottom-style:none;border-bottom-width:0px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;box-shadow:var(--wp--preset--shadow--small-dark)"><!-- wp:group {"align":"full","className":"is-style-section-top-header","style":{"spacing":{"padding":{"top":"10px","bottom":"10px"}}},"backgroundColor":"primary","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-section-top-header has-primary-background-color has-background" style="padding-top:10px;padding-bottom:10px"><!-- wp:group {"align":"wide","className":"is-style-default","style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"textColor":"base","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide is-style-default has-base-color has-text-color has-link-color" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|medium"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -16,7 +16,7 @@
 <!-- /wp:outermost/icon-block -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-alt-light"}}}}},"fontSize":"x-small"} -->
-<p class="has-x-small-font-size"><a href="tel:0202382939">020 238 2939</a></p>
+<p class="has-x-small-font-size"><a href="<?php echo esc_url( 'tel:0202382939' ); ?>"><?php echo esc_html__( '020 238 2939', 'goafrica-ollie-child' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -26,34 +26,21 @@
 <!-- /wp:outermost/icon-block -->
 
 <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|primary-alt-light"}}}}},"textColor":"base","fontSize":"x-small"} -->
-<p class="has-base-color has-text-color has-link-color has-x-small-font-size"><a href="mailto:info@goafrica.nl">info@goafrica.nl</a></p>
+<p class="has-base-color has-text-color has-link-color has-x-small-font-size"><a href="<?php echo esc_url( 'mailto:info@goafrica.nl' ); ?>"><?php echo esc_html__( 'info@goafrica.nl', 'goafrica-ollie-child' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"is-style-top-header-link","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group is-style-top-header-link"><!-- wp:paragraph {"style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-alt-light"}}}}},"fontSize":"x-small"} -->
-<p class="has-x-small-font-size"><a href="/zekerheden/">Zekerheden</a></p>
+<p class="has-x-small-font-size"><a href="<?php echo esc_url( home_url( '/zekerheden/' ) ); ?>"><?php echo esc_html__( 'Zekerheden', 'goafrica-ollie-child' ); ?></a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary","textColor":"primary-alt-light","width":100,"hoverTextColor":"primary","hoverBackgroundColor":"tertiary","className":"is-style-fill","style":{"spacing":{"padding":{"left":"var:preset|spacing|small","right":"var:preset|spacing|small","top":"8px","bottom":"8px"}},"border":{"width":"1px"},"elements":{"link":{"color":{"text":"var:preset|color|primary-alt-light"}}}},"fontSize":"x-small","borderColor":"primary-alt-light","icon":"chevron-right-small","iconSpacing":"0.2em"} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link has-primary-alt-light-color has-primary-background-color has-text-color has-background has-link-color has-border-color has-primary-alt-light-border-color has-x-small-font-size has-custom-font-size wp-element-button" href="/contact/" style="border-width:1px;padding-top:8px;padding-right:var(--wp--preset--spacing--small);padding-bottom:8px;padding-left:var(--wp--preset--spacing--small)">Vraag
-                        offerte aan</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link has-primary-alt-light-color has-primary-background-color has-text-color has-background has-link-color has-border-color has-primary-alt-light-border-color has-x-small-font-size has-custom-font-size wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" style="border-width:1px;padding-top:8px;padding-right:var(--wp--preset--spacing--small);padding-bottom:8px;padding-left:var(--wp--preset--spacing--small)"><?php echo esc_html__( 'Vraag offerte aan', 'goafrica-ollie-child' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}},"position":{"type":""}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)"><!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0","bottom":"0","left":"0","right":"0"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0"><!-- wp:site-logo {"width":200,"style":{"layout":{"selfStretch":"fit","flexSize":null}}} /-->
-
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|large"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
-<div class="wp-block-group"><!-- wp:navigation {"ref":38004,"icon":"menu","className":"is-style-header-nav","style":{"spacing":{"blockGap":"var:preset|spacing|large"},"layout":{"selfStretch":"fit","flexSize":null}},"fontSize":"small"} /-->
-
-<!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search","buttonPosition":"button-only","buttonUseIcon":true,"isSearchFieldHidden":true,"className":"is-style-header-search"} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
