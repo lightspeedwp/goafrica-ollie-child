@@ -88,6 +88,13 @@ Tags:
 	background-image: url('./assets/icons/slider-button-hover.svg') !important;
 }
 
+@media (max-width: 781px) {
+	.wp-block-cb-carousel-v2 .swiper-button-prev,
+	.wp-block-cb-carousel-v2 .swiper-button-next {
+		display: none !important;
+	}
+}
+
 /* Slider dots */
 .lsx-to-slider .slick-dots,
 .wp-block-cb-carousel-v2 .swiper-pagination {
