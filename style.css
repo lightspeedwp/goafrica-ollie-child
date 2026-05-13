@@ -96,7 +96,7 @@ Tags:
 	right: auto !important;
 	transform: none !important;
 	width: max-content !important;
-	margin: var(--wp--preset--spacing--small) auto 0 !important;
+	margin: var(--wp--preset--spacing--medium) auto 0 !important;
 	padding: 0 !important;
 	display: flex !important;
 	align-items: center !important;
