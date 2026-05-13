@@ -1,40 +1,55 @@
-<!-- wp:template-part {"slug":"header","theme":"goafrica-ollie-child","area":"header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"go-africa-ollie-child","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"has-text-color has-link-color is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-text-color has-link-color is-style-default"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"small","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide is-style-default has-small-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+<!-- wp:template-part {"slug":"main-header","theme":"go-africa-ollie-child","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Archive Hero","patternName":"core/block/57326"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|medium"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-default"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--medium)">
-    <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left","contentSize":"900px"}} -->
-    <div class="wp-block-group alignwide">
-        <!-- wp:heading {"level":1,"align":"wide","className":"is-style-default","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary-alt"}}}},"textColor":"primary-alt","fontSize":"xx-large"} -->
-        <h1 class="wp-block-heading alignwide is-style-default has-primary-alt-color has-text-color has-link-color has-xx-large-font-size"
-            style="font-style:normal;font-weight:500">Verhalen uit Afrika</h1>
-        <!-- /wp:heading -->
+<!-- wp:block {"ref":56903} /-->
 
-        <!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary"}}},"typography":{"fontStyle":"normal","fontWeight":"500"}},"textColor":"secondary"} -->
-        <p class="has-secondary-color has-text-color has-link-color" style="font-style:normal;font-weight:500">Laat je
-            inspireren door onze reisverhalen, praktische tips en het laatste nieuws over onze bestemmingen. Bereid je
-            voor op jouw droomreis.</p>
-        <!-- /wp:paragraph -->
+<!-- wp:cover {"url":"https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/lina-loos-04-C1NZk1hE-unsplash-2-1280x854.jpg","id":70276,"dimRatio":70,"isUserOverlayColor":true,"minHeight":480,"customGradient":"linear-gradient(60deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 76%)","contentPosition":"bottom center","tagName":"section","sizeSlug":"large","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-cover alignfull has-custom-content-position is-position-bottom-center"
+    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium);min-height:480px">
+    <img class="wp-block-cover__image-background wp-image-70276 size-large" alt=""
+        src="https://goafrica-rebuild.lightspeedwp.dev/wp-content/uploads/lina-loos-04-C1NZk1hE-unsplash-2-1280x854.jpg"
+        data-object-fit="cover" /><span aria-hidden="true"
+        class="wp-block-cover__background has-background-dim-70 has-background-dim wp-block-cover__gradient-background has-background-gradient"
+        style="background:linear-gradient(60deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 76%)"></span>
+    <div class="wp-block-cover__inner-container">
+        <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
+        <div class="wp-block-group alignwide">
+            <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
+            <div class="wp-block-group alignwide">
+                <!-- wp:heading {"level":1,"align":"wide","className":"is-style-shadow-text","style":{"typography":{"fontStyle":"normal","fontWeight":"500"}},"fontSize":"xx-large"} -->
+                <h1 class="wp-block-heading alignwide is-style-shadow-text has-xx-large-font-size"
+                    style="font-style:normal;font-weight:500">Verhalen uit Afrika</h1>
+                <!-- /wp:heading -->
+
+                <!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"500"}}} -->
+                <p style="font-style:normal;font-weight:500">Laat je inspireren door onze reisverhalen, praktische tips
+                    en het laatste nieuws over onze bestemmingen. Bereid je voor op jouw droomreis.</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
     </div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+</section>
+<!-- /wp:cover -->
 
 <!-- wp:group {"tagName":"main","className":"is-style-ga-page-section-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group is-style-ga-page-section-default" style="margin-top:0;margin-bottom:0">
     <!-- wp:query {"queryId":0,"query":{"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[],"perPage":15},"align":"wide","layout":{"type":"default"}} -->
     <div class="wp-block-query alignwide">
-        <!-- wp:post-template {"align":"wide","layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
-        <!-- wp:group {"metadata":{"name":"Blog Card","patternName":"goafrica-ollie-child/ga-blog-card"},"className":"overflow-hidden is-style-ga-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
+        <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group alignwide">
+            <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
+            <div class="wp-block-group alignwide">
+                <!-- wp:rudr/taxonomy-filter {"justification":"left","textAlign":"center","filterType":"buttons","showCount":true,"allItemsText":"All Categories","limitVisibleItems":true,"buttonTextColor":"main","customButtonTextColor":"#231F20","buttonBackgroundColor":"primary-light","customButtonBackgroundColor":"#1A5C4915","hoverButtonTextColor":"base","customHoverButtonTextColor":"#FFFFFF","hoverButtonBackgroundColor":"primary-accent","customHoverButtonBackgroundColor":"#1A5D4A","activeButtonTextColor":"tertiary","customActiveButtonTextColor":"#F8F7F3","activeButtonBackgroundColor":"primary","customActiveButtonBackgroundColor":"#1F4B3B","buttonBorder":{"color":"#1A5D4A","width":"1px"},"align":"wide","style":{"layout":{"selfStretch":"fill","flexSize":null}}} /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:post-template {"gridBreakpoints":[{"value":1024,"label":"1024px"},{"value":600,"label":"600px"}],"gridBreakpointSettings":{"600":{"minimumColumnWidth":"15rem"},"1024":{"minimumColumnWidth":"15rem"}},"align":"wide","layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
+        <!-- wp:group {"metadata":{"name":"Blog Card","patternName":"go-africa-ollie-child/ga-blog-card"},"className":"overflow-hidden is-style-ga-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
         <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-ga-tour-card"
             style="border-radius:0.5rem">
             <!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#f3ebef","isUserOverlayColor":false,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"}},"layout":{"type":"constrained"}} -->
@@ -130,11 +145,11 @@
 
                     <!-- wp:buttons -->
                     <div class="wp-block-buttons">
-                        <!-- wp:button {"backgroundColor":"base","textColor":"primary-alt","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-alt"}}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}}},"icon":"arrow-right","iconSpacing":"0.2em"} -->
+                        <!-- wp:button {"backgroundColor":"base","textColor":"primary-alt","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-alt"}}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}},"border":{"width":"0px","style":"none"}},"icon":"arrow-right","iconSpacing":"0.2em"} -->
                         <div class="wp-block-button"><a
                                 class="wp-block-button__link has-primary-alt-color has-base-background-color has-text-color has-background has-link-color wp-element-button"
-                                style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">Read more</a>
-                        </div>
+                                style="border-style:none;border-width:0px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">Read
+                                more</a></div>
                         <!-- /wp:button -->
                     </div>
                     <!-- /wp:buttons -->
@@ -176,4 +191,4 @@
 </main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","theme":"goafrica-ollie-child","area":"footer"} /-->
+<!-- wp:template-part {"slug":"ga-footer","theme":"go-africa-ollie-child","area":"footer"} /-->
