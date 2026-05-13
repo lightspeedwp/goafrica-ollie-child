@@ -24,7 +24,9 @@ Tags:
 /* Slider Buttons */
 
 /* Position arrows vertically centered */
-.lsx-to-slider .slick-arrow {
+.lsx-to-slider .slick-arrow,
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
 	position: absolute !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
@@ -32,23 +34,29 @@ Tags:
 }
 
 /* Left & right anchors */
-.lsx-to-slider .slick-prev {
+.lsx-to-slider .slick-prev,
+.swiper .swiper-button-prev {
 	left: -4rem !important;
 }
 
-.lsx-to-slider .slick-next {
+.lsx-to-slider .slick-next,
+.swiper .swiper-button-next {
 	right: -4rem !important;
 	transform: translateY(-50%) rotate(180deg) !important;
 }
 
 /* Remove default arrows */
-.lsx-to-slider .slick-arrow::before {
+.lsx-to-slider .slick-arrow::before,
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
 	content: none !important;
 }
 
 /* Keep icon + sizing overrides */
 .lsx-to-slider .slick-prev,
-.lsx-to-slider .slick-next {
+.lsx-to-slider .slick-next,
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
 	width: 54px !important;
 	height: 54px !important;
 	background: url('./assets/icons/slider-button-default.svg') no-repeat center/contain !important;
@@ -64,12 +72,17 @@ Tags:
 .lsx-to-slider .slick-prev:hover,
 .lsx-to-slider .slick-prev:focus-visible,
 .lsx-to-slider .slick-next:hover,
-.lsx-to-slider .slick-next:focus-visible {
+.lsx-to-slider .slick-next:focus-visible,
+.swiper .swiper-button-prev:hover,
+.swiper .swiper-button-prev:focus-visible,
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-next:focus-visible {
 	background-image: url('./assets/icons/slider-button-hover.svg') !important;
 }
 
 /* Slider dots */
-.lsx-to-slider .slick-dots {
+.lsx-to-slider .slick-dots,
+.swiper .swiper-pagination {
 	position: static !important;
 	left: auto !important;
 	right: auto !important;
@@ -85,12 +98,14 @@ Tags:
 }
 
 /* @media (min-width: 782px) {
-	.lsx-to-slider .slick-dots {
+	.lsx-to-slider .slick-dots,
+	.swiper .swiper-pagination {
 		display: none !important;
 	}
 } */
 
-.lsx-to-slider .slick-dots li {
+.lsx-to-slider .slick-dots li,
+.swiper .swiper-pagination-bullet {
 	margin: 0 !important;
 	padding: 0 !important;
 	display: flex;
@@ -103,7 +118,8 @@ Tags:
 	content: none !important;
 }
 
-.lsx-to-slider .slick-dots li button {
+.lsx-to-slider .slick-dots li button,
+.swiper .swiper-pagination-bullet {
 	width: 12px !important;
 	height: 12px !important;
 	margin: 0 !important;
@@ -120,12 +136,16 @@ Tags:
 
 .lsx-to-slider .slick-dots li.slick-active button,
 .lsx-to-slider .slick-dots li button:hover,
-.lsx-to-slider .slick-dots li button:focus-visible {
+.lsx-to-slider .slick-dots li button:focus-visible,
+.swiper .swiper-pagination-bullet-active,
+.swiper .swiper-pagination-bullet:hover,
+.swiper .swiper-pagination-bullet:focus-visible {
 	width: 32px !important;
 	background: var(--wp--preset--color--primary) !important;
 }
 
-.lsx-to-slider .slick-dots li button:focus-visible {
+.lsx-to-slider .slick-dots li button:focus-visible,
+.swiper .swiper-pagination-bullet:focus-visible {
 	outline: 2px solid var(--wp--preset--color--primary);
 	outline-offset: 2px;
 }
