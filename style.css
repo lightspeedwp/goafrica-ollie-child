@@ -166,7 +166,7 @@ Tags:
 	outline-offset: 2px;
 }
 
-.lsx-travel-information-wrapper .additional-info {
+.lsx-travel-information-wrapper .additional-info > .wp-block-group {
 	padding: var(--wp--preset--spacing--small) !important;
 }
 
