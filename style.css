@@ -172,12 +172,13 @@ Tags:
 
 .lsx-travel-information-wrapper .additional-info {
 	transition: box-shadow 200ms ease, transform 200ms ease;
-	will-change: transform, box-shadow;
+	will-change: background-color, transform, box-shadow;
 }
 
 .lsx-travel-information-wrapper .additional-info:hover,
 .lsx-travel-information-wrapper .additional-info:focus-within {
-	box-shadow: var(--wp--preset--shadow--medium-dark) !important;
+	background-color: var(--wp--preset--color--primary-light) !important;
+	box-shadow: var(--wp--preset--shadow--medium-light) !important;
 	transform: translateY(-4px);
 }
 
