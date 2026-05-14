@@ -1,20 +1,15 @@
-<!-- wp:template-part {"slug":"header","theme":"goafrica-ollie-child","area":"header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"go-africa-ollie-child","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"is-style-default has-text-color has-link-color","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}},"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}},"backgroundColor":"primary-light","fontSize":"medium","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull is-style-default has-text-color has-link-color has-primary-light-background-color has-background has-medium-font-size"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"small","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide is-style-default has-small-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+<!-- wp:template-part {"slug":"main-header","theme":"go-africa-ollie-child","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Hero"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|medium"}}},"backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-default has-primary-light-background-color has-background"
+<!-- wp:block {"ref":56903} /-->
+
+<!-- wp:group {"metadata":{"name":"Hero"},"className":"is-style-default","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|x-large","bottom":"var:preset|spacing|medium"}}},"backgroundColor":"primary-alt-light","layout":{"type":"constrained"}} -->
+<div class="wp-block-group is-style-default has-primary-alt-light-background-color has-background"
     style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--x-large);padding-bottom:var(--wp--preset--spacing--medium)">
     <!-- wp:group {"align":"wide","layout":{"type":"constrained","justifyContent":"left"}} -->
     <div class="wp-block-group alignwide">
-        <!-- wp:query-title {"type":"archive","showPrefix":false,"align":"wide","style":{"typography":{"fontStyle":"normal","fontWeight":"500"},"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"primary","fontSize":"xx-large"} /-->
+        <!-- wp:query-title {"type":"archive","showPrefix":false,"align":"wide","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-alt"}}}},"textColor":"primary-alt"} /-->
 
         <!-- wp:term-description /-->
     </div>
@@ -22,21 +17,37 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ga-page-section-default","backgroundColor":"primary-light","layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Archive Content"},"align":"wide","className":"is-style-ga-page-section-default","backgroundColor":"primary-alt-light","layout":{"type":"constrained"}} -->
 <div
-    class="wp-block-group alignwide is-style-ga-page-section-default has-primary-light-background-color has-background">
-    <!-- wp:query {"queryId":27,"query":{"perPage":15,"pages":"3","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"align":"wide","layout":{"type":"constrained","contentSize":""}} -->
+    class="wp-block-group alignwide is-style-ga-page-section-default has-primary-alt-light-background-color has-background">
+    <!-- wp:query {"queryId":27,"query":{"perPage":15,"pages":"3","offset":"0","postType":"tour","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"parents":[]},"enhancedPagination":true,"align":"wide","layout":{"type":"constrained","contentSize":""}} -->
     <div class="wp-block-query alignwide">
-        <!-- wp:post-template {"lock":{"move":false,"remove":false},"align":"wide","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
+        <!-- wp:group {"align":"wide","className":"is-style-default","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+        <div class="wp-block-group alignwide is-style-default" style="padding-top:0;padding-bottom:0">
+            <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+            <div class="wp-block-group">
+                <!-- wp:rudr/taxonomy-filter {"taxonomy":{"name":"Travel Styles","all_items":"Travel Styles","slug":"travel-style","rest_base":"travel-style"},"filterType":"buttons","showCount":true,"allItemsText":"Reisstijl","limitVisibleItems":true,"expandText":"+ Toon [number] meer","collapseText":"- Laat minder zien","buttonTextColor":"primary","customButtonTextColor":"#1F4B3B","buttonBackgroundColor":"primary-light","customButtonBackgroundColor":"#1A5C4915","hoverButtonTextColor":"base","customHoverButtonTextColor":"#FFFFFF","hoverButtonBackgroundColor":"primary-accent","customHoverButtonBackgroundColor":"#1A5D4A","activeButtonTextColor":"base","customActiveButtonTextColor":"#FFFFFF","activeButtonBackgroundColor":"primary","customActiveButtonBackgroundColor":"#1F4B3B","buttonBorder":{"color":"#1F4B3B","width":"1px"},"style":{"layout":{"selfStretch":"fill","flexSize":null}}} /-->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:post-template {"lock":{"move":false,"remove":false},"gridBreakpoints":[{"value":1024,"label":"1024px"},{"value":600,"label":"600px"}],"gridBreakpointSettings":{"600":{"columnCount":1},"1024":{"columnCount":2}},"align":"wide","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
         <!-- wp:block {"ref":57619} /-->
         <!-- /wp:post-template -->
 
-        <!-- wp:query-no-results -->
-        <!-- wp:paragraph {"align":"center","placeholder":"Add text or blocks that will display when the query returns no results."} -->
-        <p class="has-text-align-center">Unfortunately, there are no tours listed at the moment. Please check back soon
-            as we regularly update our offerings.</p>
-        <!-- /wp:paragraph -->
-        <!-- /wp:query-no-results -->
+        <!-- wp:group {"className":"is-style-background-blur","style":{"spacing":{"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"}}},"layout":{"type":"constrained"}} -->
+        <div class="wp-block-group is-style-background-blur"
+            style="padding-top:var(--wp--preset--spacing--medium);padding-bottom:var(--wp--preset--spacing--medium)">
+            <!-- wp:query-no-results -->
+            <!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","style":{"typography":{"textAlign":"center"}},"fontSize":"medium"} -->
+            <p class="has-text-align-center has-medium-font-size">Unfortunately, there are no tours listed at the
+                moment. Please check back soon
+                as we regularly update our offerings.</p>
+            <!-- /wp:paragraph -->
+            <!-- /wp:query-no-results -->
+        </div>
+        <!-- /wp:group -->
 
         <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"}}},"layout":{"type":"constrained"}} -->
         <div class="wp-block-group alignwide"
@@ -55,4 +66,4 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","theme":"goafrica-ollie-child","area":"footer"} /-->
+<!-- wp:template-part {"slug":"ga-footer","theme":"go-africa-ollie-child","area":"uncategorized"} /-->

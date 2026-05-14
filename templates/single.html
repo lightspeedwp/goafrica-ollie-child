@@ -1,13 +1,8 @@
-<!-- wp:template-part {"slug":"header","theme":"goafrica-ollie-child","area":"header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"go-africa-ollie-child","area":"header"} /-->
 
-<!-- wp:group {"metadata":{"name":"Breadcrumbs"},"align":"full","className":"has-text-color has-link-color is-style-default","style":{"elements":{"link":{":hover":{"color":{"text":"var:preset|color|primary-700"}}}},"spacing":{"padding":{"top":"var:preset|spacing|small","bottom":"var:preset|spacing|small"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-text-color has-link-color is-style-default"
-    style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--small);padding-bottom:var(--wp--preset--spacing--small)">
-    <!-- wp:group {"align":"wide","className":"is-style-default","fontSize":"small","layout":{"type":"default"}} -->
-    <div class="wp-block-group alignwide is-style-default has-small-font-size"><!-- wp:yoast-seo/breadcrumbs /--></div>
-    <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+<!-- wp:template-part {"slug":"main-header","theme":"go-africa-ollie-child","area":"header"} /-->
+
+<!-- wp:block {"ref":56903} /-->
 
 <!-- wp:cover {"useFeaturedImage":true,"dimRatio":60,"isUserOverlayColor":true,"minHeight":400,"customGradient":"linear-gradient(60deg,rgb(0,0,0) 0%,rgba(0,0,0,0) 77%)","contentPosition":"bottom center","tagName":"section","metadata":{"name":"Hero"},"align":"full","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|medium","bottom":"var:preset|spacing|medium"}}},"layout":{"type":"constrained"}} -->
 <section class="wp-block-cover alignfull has-custom-content-position is-position-bottom-center"
@@ -168,7 +163,7 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Latest Posts"},"align":"full","className":"is-style-ga-page-section-default","style":{"spacing":{"blockGap":"var:preset|spacing|x-large","padding":{"top":"var:preset|spacing|x-large"}}},"layout":{"type":"constrained"}} -->
+<!-- wp:group {"metadata":{"name":"Latest Posts"},"align":"full","className":"is-style-ga-page-section-default","style":{"spacing":{"padding":{"top":"var:preset|spacing|x-large"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-ga-page-section-default"
     style="padding-top:var(--wp--preset--spacing--x-large)">
     <!-- wp:group {"metadata":{"name":"Title"},"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|small"}},"layout":{"type":"constrained"}} -->
@@ -188,7 +183,7 @@
     <!-- wp:query {"queryId":1,"query":{"perPage":6,"pages":"3","offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"align":"wide"} -->
     <div class="wp-block-query alignwide">
         <!-- wp:post-template {"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
-        <!-- wp:group {"metadata":{"name":"Blog Card","patternName":"goafrica-ollie-child/ga-blog-card"},"className":"overflow-hidden is-style-ga-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
+        <!-- wp:group {"metadata":{"name":"Blog Card","patternName":"go-africa-ollie-child/ga-blog-card"},"className":"overflow-hidden is-style-ga-tour-card","style":{"spacing":{"blockGap":"0"},"border":{"radius":"0.5rem"}},"layout":{"type":"default"},"ariaLabel":"Tour Card","linkDestination":"post"} -->
         <div aria-label="Tour Card" class="wp-block-group overflow-hidden is-style-ga-tour-card"
             style="border-radius:0.5rem">
             <!-- wp:cover {"useFeaturedImage":true,"dimRatio":0,"customOverlayColor":"#f3ebef","isUserOverlayColor":false,"contentPosition":"top left","isDark":false,"style":{"dimensions":{"aspectRatio":"3/2"}},"layout":{"type":"constrained"}} -->
@@ -284,11 +279,11 @@
 
                     <!-- wp:buttons -->
                     <div class="wp-block-buttons">
-                        <!-- wp:button {"backgroundColor":"base","textColor":"primary-alt","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-alt"}}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}}},"icon":"arrow-right","iconSpacing":"0.2em"} -->
+                        <!-- wp:button {"backgroundColor":"base","textColor":"primary-alt","style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-alt"}}},"spacing":{"padding":{"left":"0","right":"0","top":"0","bottom":"0"}},"border":{"width":"0px","style":"none"}},"icon":"arrow-right","iconSpacing":"0.2em"} -->
                         <div class="wp-block-button"><a
                                 class="wp-block-button__link has-primary-alt-color has-base-background-color has-text-color has-background has-link-color wp-element-button"
-                                style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">Read more</a>
-                        </div>
+                                style="border-style:none;border-width:0px;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">Read
+                                more</a></div>
                         <!-- /wp:button -->
                     </div>
                     <!-- /wp:buttons -->
@@ -304,4 +299,4 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","theme":"goafrica-ollie-child","area":"footer"} /-->
+<!-- wp:template-part {"slug":"ga-footer","theme":"go-africa-ollie-child","area":"uncategorized"} /-->

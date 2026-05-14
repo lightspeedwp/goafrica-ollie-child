@@ -1,4 +1,6 @@
-<!-- wp:template-part {"slug":"ga-header","theme":"go-africa-ollie-child","area":"header"} /-->
+<!-- wp:template-part {"slug":"top-header","theme":"go-africa-ollie-child","area":"header"} /-->
+
+<!-- wp:template-part {"slug":"main-header","theme":"go-africa-ollie-child","area":"header"} /-->
 
 <!-- wp:block {"ref":56903} /-->
 
@@ -80,7 +82,7 @@
 
         <!-- wp:column {"width":"33.34%","style":{"spacing":{"blockGap":"0"}}} -->
         <div class="wp-block-column" style="flex-basis:33.34%">
-            <!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"},"stickyScrollOffset":"80px","unstickOnMobile":true} -->
+            <!-- wp:group {"style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"},"stickyScrollOffset":"100px","unstickOnMobile":true} -->
             <div class="wp-block-group">
                 <!-- wp:template-part {"slug":"ga-fast-facts-tour","theme":"go-africa-ollie-child","area":"uncategorized"} /-->
             </div>
@@ -122,16 +124,17 @@
     <!-- wp:group {"metadata":{"name":"Map Container"},"align":"wide","style":{"border":{"radius":{"topLeft":"var:preset|border-radius|md","topRight":"var:preset|border-radius|md","bottomLeft":"var:preset|border-radius|md","bottomRight":"var:preset|border-radius|md"}}},"layout":{"type":"default"}} -->
     <div class="wp-block-group alignwide"
         style="border-top-left-radius:var(--wp--preset--border-radius--md);border-top-right-radius:var(--wp--preset--border-radius--md);border-bottom-left-radius:var(--wp--preset--border-radius--md);border-bottom-right-radius:var(--wp--preset--border-radius--md)">
-        <!-- wp:cover {"dimRatio":50,"customOverlayColor":"#e2f0f7","isUserOverlayColor":false,"minHeight":500,"isDark":false,"className":"lsx-map-preview","layout":{"type":"constrained"}} -->
-        <div class="wp-block-cover is-light lsx-map-preview" style="min-height:500px"><span aria-hidden="true"
-                class="wp-block-cover__background has-background-dim" style="background-color:#e2f0f7"></span>
-            <div class="wp-block-cover__inner-container">
-                <!-- wp:paragraph {"className":"has-text-align-center has-large-font-size","style":{"typography":{"textAlign":"center"}},"fontSize":"large"} -->
-                <p class="has-text-align-center has-large-font-size"><a href="#">Click here to display the map</a></p>
-                <!-- /wp:paragraph -->
+        <!-- wp:group {"metadata":{"name":"WETU Map","bindings":{"content":{"source":"lsx/map","type":"wetu"}}},"className":"lsx-wetu-map","layout":{"type":"constrained"}} -->
+        <div class="wp-block-group lsx-wetu-map"><!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+            <div class="wp-block-group alignwide"><!-- wp:image {"sizeSlug":"large","align":"full"} -->
+                <figure class="wp-block-image alignfull size-large"><img
+                        src="https://goafrica-rebuild.lightspeedwp.dev/wp-content/plugins/tour-operator/assets/img/blocks/wetu-map-figme-prototype-image.png"
+                        alt="" /></figure>
+                <!-- /wp:image -->
             </div>
+            <!-- /wp:group -->
         </div>
-        <!-- /wp:cover -->
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
 </section>
@@ -234,14 +237,15 @@
                                 </div>
                                 <!-- /wp:outermost/icon-block -->
 
-                                <!-- wp:paragraph {"metadata":{"name":"Location Value"},"className":"itinerary-location","fontSize":"small","prefix":"Location:"} -->
+                                <!-- wp:paragraph {"metadata":{"name":"Location Value"},"className":"itinerary-location","fontSize":"small","prefix":"Location: "} -->
                                 <p class="itinerary-location has-small-font-size">Card Link</p>
                                 <!-- /wp:paragraph -->
                             </div>
                             <!-- /wp:group -->
 
-                            <!-- wp:group {"metadata":{"name":"Accommodation Row"},"className":"itin-location-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group itin-location-wrapper" style="font-style:normal;font-weight:500">
+                            <!-- wp:group {"metadata":{"name":"Accommodation Row"},"className":"itin-accommodation-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                            <div class="wp-block-group itin-accommodation-wrapper"
+                                style="font-style:normal;font-weight:500">
                                 <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"24px"} -->
                                 <div class="wp-block-outermost-icon-block">
                                     <div class="icon-container has-icon-color has-primary-alt-color"
@@ -255,14 +259,14 @@
                                 </div>
                                 <!-- /wp:outermost/icon-block -->
 
-                                <!-- wp:paragraph {"metadata":{"name":"Accommodation Value"},"className":"itinerary-location","fontSize":"small","prefix":"Accommodation:"} -->
-                                <p class="itinerary-location has-small-font-size">Card Link</p>
+                                <!-- wp:paragraph {"metadata":{"name":"Accommodation Value"},"className":"itinerary-accommodation","fontSize":"small","prefix":"Accommodation: "} -->
+                                <p class="itinerary-accommodation has-small-font-size">Card Link</p>
                                 <!-- /wp:paragraph -->
                             </div>
                             <!-- /wp:group -->
 
-                            <!-- wp:group {"metadata":{"name":"Type Row"},"className":"itin-location-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group itin-location-wrapper" style="font-style:normal;font-weight:500">
+                            <!-- wp:group {"metadata":{"name":"Type Row"},"className":"itin-type-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                            <div class="wp-block-group itin-type-wrapper" style="font-style:normal;font-weight:500">
                                 <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"24px"} -->
                                 <div class="wp-block-outermost-icon-block">
                                     <div class="icon-container has-icon-color has-primary-alt-color"
@@ -276,14 +280,14 @@
                                 </div>
                                 <!-- /wp:outermost/icon-block -->
 
-                                <!-- wp:paragraph {"metadata":{"name":"Type Value"},"className":"itinerary-location","fontSize":"small","prefix":"Type:"} -->
-                                <p class="itinerary-location has-small-font-size">Card Link</p>
+                                <!-- wp:paragraph {"metadata":{"name":"Type Value"},"className":"itinerary-type","fontSize":"small","prefix":"Type: "} -->
+                                <p class="itinerary-type has-small-font-size">Card Link</p>
                                 <!-- /wp:paragraph -->
                             </div>
                             <!-- /wp:group -->
 
-                            <!-- wp:group {"metadata":{"name":"Drinks Basis Row"},"className":"itin-location-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group itin-location-wrapper" style="font-style:normal;font-weight:500">
+                            <!-- wp:group {"metadata":{"name":"Drinks Basis Row"},"className":"itin-drinks-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                            <div class="wp-block-group itin-drinks-wrapper" style="font-style:normal;font-weight:500">
                                 <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"24px"} -->
                                 <div class="wp-block-outermost-icon-block">
                                     <div class="icon-container has-icon-color has-primary-alt-color"
@@ -297,14 +301,14 @@
                                 </div>
                                 <!-- /wp:outermost/icon-block -->
 
-                                <!-- wp:paragraph {"metadata":{"name":"Drinks Basis Value"},"className":"itinerary-location","fontSize":"small","prefix":"Drinks Basis:"} -->
-                                <p class="itinerary-location has-small-font-size">Card Link</p>
+                                <!-- wp:paragraph {"metadata":{"name":"Drinks Basis Value"},"className":"itinerary-drinks","fontSize":"small","prefix":"Drinks Basis: "} -->
+                                <p class="itinerary-drinks has-small-font-size">Card Link</p>
                                 <!-- /wp:paragraph -->
                             </div>
                             <!-- /wp:group -->
 
-                            <!-- wp:group {"metadata":{"name":"Room Basis Row"},"className":"itin-location-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-                            <div class="wp-block-group itin-location-wrapper" style="font-style:normal;font-weight:500">
+                            <!-- wp:group {"metadata":{"name":"Room Basis Row"},"className":"itin-room-wrapper","style":{"spacing":{"blockGap":"0.3125rem"},"typography":{"fontStyle":"normal","fontWeight":"500"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+                            <div class="wp-block-group itin-room-wrapper" style="font-style:normal;font-weight:500">
                                 <!-- wp:outermost/icon-block {"iconName":"","iconColor":"primary-alt","iconColorValue":"#DD4611","width":"24px"} -->
                                 <div class="wp-block-outermost-icon-block">
                                     <div class="icon-container has-icon-color has-primary-alt-color"
@@ -318,8 +322,8 @@
                                 </div>
                                 <!-- /wp:outermost/icon-block -->
 
-                                <!-- wp:paragraph {"metadata":{"name":"Room Basis Value"},"className":"itinerary-location","fontSize":"small","prefix":"Room Basis:"} -->
-                                <p class="itinerary-location has-small-font-size">Card Link</p>
+                                <!-- wp:paragraph {"metadata":{"name":"Room Basis Value"},"className":"itinerary-room","fontSize":"small","prefix":"Room Basis: "} -->
+                                <p class="itinerary-room has-small-font-size">Card Link</p>
                                 <!-- /wp:paragraph -->
                             </div>
                             <!-- /wp:group -->
