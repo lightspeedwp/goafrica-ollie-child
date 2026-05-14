@@ -55,11 +55,23 @@ add_filter( 'register_block_type_args', 'goafrica_child_filter_core_button_style
  * Enqueue front-end assets.
  */
 function goafrica_child_enqueue_scripts() {
+	$style_path     = get_stylesheet_directory() . '/style.css';
+	$functions_path = __FILE__;
+	$style_version  = wp_get_theme()->get( 'Version' );
+
+	if ( file_exists( $style_path ) ) {
+		$style_version = (string) filemtime( $style_path );
+	}
+
+	if ( file_exists( $functions_path ) ) {
+		$style_version .= '.' . filemtime( $functions_path );
+	}
+
 	wp_enqueue_style(
 		'goafrica-ollie-child',
 		get_stylesheet_uri(),
 		array( 'ollie' ),
-		wp_get_theme()->get( 'Version' )
+		$style_version
 	);
 
 	wp_enqueue_script(
