@@ -196,6 +196,54 @@ Tags:
 
 /* ========================================================================== */
 
+/* Gallery Layout                                                             */
+
+/* ========================================================================== */
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--wp--style--unstable-gallery-gap, 16px);
+	align-items: start;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
+	width: 100%;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image {
+	margin: 0;
+	min-width: 0;
+	max-width: none;
+	flex-grow: 0;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image > a,
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image > div {
+	width: 100%;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image img {
+	width: 100% !important;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+@media (max-width: 781px) {
+	.lsx-gallery-wrapper .wp-block-gallery.has-nested-images {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 480px) {
+	.lsx-gallery-wrapper .wp-block-gallery.has-nested-images {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+
+/* ========================================================================== */
+
 /* Expanding Header Search             										  */
 
 /* ========================================================================== */
