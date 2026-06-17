@@ -112,12 +112,21 @@ Tags:
 	list-style: none !important;
 }
 
-/* @media (min-width: 782px) {
+@media (max-width: 781px) {
 	.lsx-to-slider .slick-dots,
 	.wp-block-cb-carousel-v2 .swiper-pagination {
 		display: none !important;
 	}
-} */
+
+	/* Peek: next card hangs into edge as swipe affordance */
+	.lsx-to-slider .slick-list {
+		overflow: visible !important;
+	}
+
+	.wp-block-cb-carousel-v2 .swiper {
+		overflow: visible !important;
+	}
+}
 
 .lsx-to-slider .slick-dots li,
 .wp-block-cb-carousel-v2 .swiper-pagination-bullet {
