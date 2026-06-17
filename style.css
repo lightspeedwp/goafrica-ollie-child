@@ -119,10 +119,13 @@ Tags:
 	}
 
 	/* Peek: next card hangs into edge as swipe affordance */
+	/* Slick: right padding shrinks slide width so next slide peeks into the gap */
 	.lsx-to-slider .slick-list {
-		overflow: visible !important;
+		padding-right: 15% !important;
+		box-sizing: border-box;
 	}
 
+	/* Swiper: overflow visible lets next slide extend past container edge */
 	.wp-block-cb-carousel-v2 .swiper {
 		overflow: visible !important;
 	}
