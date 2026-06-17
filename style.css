@@ -118,11 +118,15 @@ Tags:
 		display: none !important;
 	}
 
-	/* Peek: next card hangs into edge as swipe affordance */
-	/* Slick: right padding shrinks slide width so next slide peeks into the gap */
+	/* Slick peek: narrow the list so Slick calculates narrower slides,
+	   overflow: visible reveals the next slide; parent clips at its edge */
+	.lsx-to-slider {
+		overflow: hidden !important;
+	}
+
 	.lsx-to-slider .slick-list {
-		padding-right: 15% !important;
-		box-sizing: border-box;
+		width: 85% !important;
+		overflow: visible !important;
 	}
 
 	/* Swiper: overflow visible lets next slide extend past container edge */
