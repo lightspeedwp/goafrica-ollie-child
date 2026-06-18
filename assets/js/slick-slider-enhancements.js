@@ -33,15 +33,74 @@
 
 	var MOBILE_QUERY = window.matchMedia('(max-width: 781px)');
 	var PEEK_PADDING = '14%'; // How much of the neighbouring slides to reveal.
+	var FALLBACK_DESKTOP_SLIDES = 3;
+
+	function storeSlick($slider, slick) {
+		if ($slider.length && slick) {
+			$slider[0]._gaSlick = slick;
+		}
+	}
 
 	function getSlick($slider) {
-		return $slider.hasClass('slick-initialized') ? $slider.slick('getSlick') : null;
+		if (!$slider.length) {
+			return null;
+		}
+
+		if ($slider[0]._gaSlick) {
+			return $slider[0]._gaSlick;
+		}
+
+		if (!$slider.hasClass('slick-initialized')) {
+			return null;
+		}
+
+		try {
+			var slick = $slider.slick('getSlick');
+			storeSlick($slider, slick);
+			return slick;
+		} catch (error) {
+			return null;
+		}
+	}
+
+	function getStateFromDom($slider) {
+		var $slides = $slider.find('.slick-slide').not('.slick-cloned');
+		if (!$slides.length) {
+			return null;
+		}
+
+		var $activeSlides = $slider.find('.slick-slide.slick-active').not('.slick-cloned');
+		var currentIndex = parseInt($slider.find('.slick-slide.slick-current').attr('data-slick-index'), 10);
+
+		if (isNaN(currentIndex)) {
+			currentIndex = parseInt($activeSlides.first().attr('data-slick-index'), 10);
+		}
+
+		return {
+			total: $slides.length,
+			perView: Math.max(1, $activeSlides.length || 1),
+			currentSlide: isNaN(currentIndex) ? 0 : Math.max(0, currentIndex)
+		};
+	}
+
+	function getSliderState($slider) {
+		var slick = getSlick($slider);
+		if (slick) {
+			return {
+				slick: slick,
+				total: slick.slideCount,
+				perView: slick.options.slidesToShow || 1,
+				currentSlide: slick.currentSlide || 0
+			};
+		}
+
+		return getStateFromDom($slider);
 	}
 
 	/* --- Peek ------------------------------------------------------------- */
 
-	function applyPeek($slider) {
-		var slick = getSlick($slider);
+	function applyPeek($slider, slick) {
+		slick = slick || getSlick($slider);
 		if (!slick) {
 			return;
 		}
@@ -77,13 +136,13 @@
 	}
 
 	function updateProgress($slider) {
-		var slick = getSlick($slider);
-		if (!slick) {
+		var state = getSliderState($slider);
+		if (!state) {
 			return;
 		}
 
-		var total = slick.slideCount;
-		var perView = slick.options.slidesToShow || 1;
+		var total = state.total;
+		var perView = state.perView;
 		var $bar = getProgressBar($slider);
 
 		if (total <= perView) {
@@ -95,7 +154,7 @@
 
 		var ratio = Math.min(1, perView / total); // Thumb width as a fraction.
 		var travel = total - perView; // Number of scrollable steps.
-		var progress = travel > 0 ? Math.min(1, Math.max(0, slick.currentSlide / travel)) : 0;
+		var progress = travel > 0 ? Math.min(1, Math.max(0, state.currentSlide / travel)) : 0;
 
 		$bar.children('.ga-slider-progress__fill').css({
 			width: (ratio * 100) + '%',
@@ -106,23 +165,103 @@
 
 	/* --- Wiring ----------------------------------------------------------- */
 
-	function enhance($slider) {
-		if ($slider.data('gaEnhanced')) {
+	function refreshEnhancement($slider, slick) {
+		storeSlick($slider, slick);
+		applyPeek($slider, slick);
+		updateProgress($slider);
+	}
+
+	function bindEnhancementEvents($slider) {
+		if ($slider.data('gaEnhancementEventsBound')) {
 			return;
 		}
+
+		$slider.data('gaEnhancementEventsBound', true);
+
+		$slider.on('init.gaEnhance reInit.gaEnhance setPosition.gaEnhance afterChange.gaEnhance breakpoint.gaEnhance', function (event, slick) {
+			refreshEnhancement($slider, slick || null);
+		});
+	}
+
+	function getDesktopSlidesToShow($slider) {
+		var classes = $slider.attr('class') || '';
+		var match = classes.match(/columns-(\d+)/);
+		var slideCount = $slider.children().length || 1;
+
+		if (match) {
+			return Math.max(1, Math.min(slideCount, parseInt(match[1], 10)));
+		}
+
+		if ($slider.is('.travel-information')) {
+			return Math.max(1, Math.min(slideCount, 3));
+		}
+
+		return Math.max(1, Math.min(slideCount, FALLBACK_DESKTOP_SLIDES));
+	}
+
+	function getResponsiveSettings(slidesToShow) {
+		var tabletSlides = Math.max(1, Math.min(slidesToShow, 2));
+
+		return [
+			{
+				breakpoint: 1228,
+				settings: {
+					slidesToShow: tabletSlides,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 1028,
+				settings: {
+					slidesToShow: tabletSlides,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 782,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		];
+	}
+
+	function initFallbackSlider($slider) {
+		if (!$slider.length || $slider.hasClass('slick-initialized') || typeof $slider.slick !== 'function') {
+			return;
+		}
+
+		var slidesToShow = getDesktopSlidesToShow($slider);
+
+		$slider.slick({
+			appendArrows: $slider.parent(),
+			appendDots: $slider.parent(),
+			arrows: true,
+			dots: true,
+			infinite: $slider.children().length > slidesToShow,
+			slidesToScroll: 1,
+			slidesToShow: slidesToShow,
+			responsive: getResponsiveSettings(slidesToShow)
+		});
+	}
+
+	function initFallbackSliders() {
+		$(INIT_SELECTOR).each(function () {
+			initFallbackSlider($(this));
+		});
+	}
+
+	function enhance($slider, slick) {
+		bindEnhancementEvents($slider);
+
+		if ($slider.data('gaEnhanced')) {
+			refreshEnhancement($slider, slick || null);
+			return;
+		}
+
 		$slider.data('gaEnhanced', true);
-
-		applyPeek($slider);
-		updateProgress($slider);
-
-		$slider.on('afterChange.gaEnhance setPosition.gaEnhance', function () {
-			updateProgress($slider);
-		});
-
-		$slider.on('breakpoint.gaEnhance', function () {
-			applyPeek($slider);
-			updateProgress($slider);
-		});
+		refreshEnhancement($slider, slick || null);
 	}
 
 	function enhanceAll() {
@@ -132,19 +271,19 @@
 	}
 
 	// Catch sliders initialised after this script runs (binds before Slick init).
-	$(document).on('init.gaEnhance', INIT_SELECTOR, function () {
-		enhance($(this));
+	$(document).on('init.gaEnhance reInit.gaEnhance', INIT_SELECTOR, function (event, slick) {
+		enhance($(this), slick);
 	});
 
 	// Catch sliders already initialised before this script ran.
 	$(enhanceAll);
+	$(window).on('load.gaEnhance', initFallbackSliders);
 
 	// Re-evaluate the peek when crossing the mobile breakpoint.
 	function onMediaChange() {
 		$(SLIDER_SELECTOR).each(function () {
 			var $slider = $(this);
-			applyPeek($slider);
-			updateProgress($slider);
+			refreshEnhancement($slider, null);
 		});
 	}
 
