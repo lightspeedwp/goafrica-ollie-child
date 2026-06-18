@@ -118,20 +118,22 @@ Tags:
 		display: none !important;
 	}
 
-	/* Slick peek: narrow the list so Slick calculates narrower slides,
-	   overflow: visible reveals the next slide; parent clips at its edge */
-	.lsx-to-slider {
+	/* Clip each slider to its own width so the single mobile slide shows
+	   full-width without overflowing the viewport. */
+	.lsx-to-slider,
+	.lsx-to-slider .slick-list {
 		overflow: hidden !important;
 	}
 
+	/* Reset the Slick list to full width; Slick sizes each slide from the
+	   list width, so a narrower list squashes the single mobile slide. */
 	.lsx-to-slider .slick-list {
-		width: 85% !important;
-		overflow: visible !important;
+		width: 100% !important;
 	}
 
-	/* Swiper: overflow visible lets next slide extend past container edge */
+	/* Keep Swiper clipped to the carousel block edge (Swiper default). */
 	.wp-block-cb-carousel-v2 .swiper {
-		overflow: visible !important;
+		overflow: hidden !important;
 	}
 }
 
