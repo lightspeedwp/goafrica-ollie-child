@@ -32,8 +32,9 @@
 	var INIT_SELECTOR = '.lsx-to-slider .wp-block-post-template, .lsx-to-slider .travel-information';
 
 	var MOBILE_QUERY = window.matchMedia('(max-width: 781px)');
-	var PEEK_PADDING = '14%'; // How much of the neighbouring slides to reveal.
+	var PEEK_PADDING = '10%'; // How much of the neighbouring slides to reveal.
 	var FALLBACK_DESKTOP_SLIDES = 3;
+	var FALLBACK_SELECTOR = '.lsx-to-slider .travel-information';
 
 	function storeSlick($slider, slick) {
 		if ($slider.length && slick) {
@@ -97,6 +98,21 @@
 		return getStateFromDom($slider);
 	}
 
+	function setSlickOption($slider, slick, option, value, refresh) {
+		if (slick && typeof slick.slickSetOption === 'function') {
+			slick.slickSetOption(option, value, refresh);
+			storeSlick($slider, slick);
+			return true;
+		}
+
+		try {
+			$slider.slick('slickSetOption', option, value, refresh);
+			return true;
+		} catch (error) {
+			return false;
+		}
+	}
+
 	/* --- Peek ------------------------------------------------------------- */
 
 	function applyPeek($slider, slick) {
@@ -110,8 +126,11 @@
 			return; // Already in the desired state.
 		}
 
-		$slider.slick('slickSetOption', 'centerMode', wantPeek, false);
-		$slider.slick('slickSetOption', 'centerPadding', wantPeek ? PEEK_PADDING : '0px', true);
+		if (!setSlickOption($slider, slick, 'centerMode', wantPeek, false)) {
+			return;
+		}
+
+		setSlickOption($slider, slick, 'centerPadding', wantPeek ? PEEK_PADDING : '0px', true);
 	}
 
 	/* --- Progress bar ----------------------------------------------------- */
@@ -247,7 +266,7 @@
 	}
 
 	function initFallbackSliders() {
-		$(INIT_SELECTOR).each(function () {
+		$(FALLBACK_SELECTOR).each(function () {
 			initFallbackSlider($(this));
 		});
 	}

@@ -23,8 +23,8 @@
 
 	var BLOCK_SELECTOR = '.wp-block-cb-carousel-v2';
 	var MOBILE_QUERY = window.matchMedia('(max-width: 781px)');
-	var PEEK_VIEW = 1.15; // slidesPerView on mobile (reveals the next slide).
-	var PEEK_GAP = 16; // Minimum spaceBetween on mobile, in px.
+	var PEEK_VIEW = 1.10; // slidesPerView on mobile (reveals the next slide).
+	var PEEK_GAP = 14; // Minimum spaceBetween on mobile, in px.
 
 	function getSwiper(block) {
 		var el = block.matches('.swiper') ? block : block.querySelector('.swiper');

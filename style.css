@@ -334,7 +334,7 @@ Tags:
 /* Further adjustments for very small screens */
 @media (max-width: 600px) {
 	.is-style-header-search .wp-block-search__input:not(.wp-block-search__searchfield-hidden) {
-		width: 260px;
+		width: 220px;
 	}
 }
 
