@@ -102,21 +102,11 @@ function goafrica_child_enqueue_scripts() {
 		)
 	);
 
-	// Slick slider enhancements: mobile peek + scrollbar-style progress bar.
-	wp_enqueue_style(
-		'goafrica-slick-slider-enhancements',
-		$theme_uri . '/assets/css/slick-slider-enhancements.css',
-		array( 'goafrica-ollie-child' ),
-		goafrica_child_asset_version( 'assets/css/slick-slider-enhancements.css' )
-	);
-
-	wp_enqueue_script(
-		'goafrica-slick-slider-enhancements',
-		$theme_uri . '/assets/js/slick-slider-enhancements.js',
-		array( 'jquery' ),
-		goafrica_child_asset_version( 'assets/js/slick-slider-enhancements.js' ),
-		array( 'in_footer' => true )
-	);
+	// Slick sliders (Tour Operator plugin) are initialised by the plugin itself
+	// and styled by this theme's style.css (arrows + dots). They intentionally
+	// have NO extra JS enhancement: the plugin's responsive config already gives
+	// a sane per-viewport slider (mobile = 1 slide, swipe + native dots), and
+	// runtime option manipulation proved unreliable. Keep the Slick fix CSS-only.
 
 	// Carousel block (Swiper) enhancements: mobile peek + progress bar.
 	wp_enqueue_style(
