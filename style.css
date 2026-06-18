@@ -113,11 +113,6 @@ Tags:
 }
 
 @media (max-width: 781px) {
-	.lsx-to-slider .slick-dots,
-	.wp-block-cb-carousel-v2 .swiper-pagination {
-		display: none !important;
-	}
-
 	/* Clip each slider to its own width so the single mobile slide shows
 	   full-width without overflowing the viewport. */
 	.lsx-to-slider,

@@ -52,11 +52,28 @@ function goafrica_child_filter_core_button_styles( $args, $block_type ) {
 add_filter( 'register_block_type_args', 'goafrica_child_filter_core_button_styles', 20, 2 );
 
 /**
+ * Cache-busting version for a theme asset, based on its file modification time.
+ *
+ * @param string $relative_path Asset path relative to the theme root.
+ * @return string Version string (file mtime, or the theme version as a fallback).
+ */
+function goafrica_child_asset_version( $relative_path ) {
+	$absolute_path = get_stylesheet_directory() . '/' . ltrim( $relative_path, '/' );
+
+	if ( file_exists( $absolute_path ) ) {
+		return (string) filemtime( $absolute_path );
+	}
+
+	return (string) wp_get_theme()->get( 'Version' );
+}
+
+/**
  * Enqueue front-end assets.
  */
 function goafrica_child_enqueue_scripts() {
 	$style_path     = get_stylesheet_directory() . '/style.css';
 	$functions_path = __FILE__;
+	$theme_uri      = get_stylesheet_directory_uri();
 	$style_version  = wp_get_theme()->get( 'Version' );
 
 	if ( file_exists( $style_path ) ) {
@@ -76,9 +93,44 @@ function goafrica_child_enqueue_scripts() {
 
 	wp_enqueue_script(
 		'goafrica-faq-accordion',
-		get_stylesheet_directory_uri() . '/assets/js/faq-accordion.js',
+		$theme_uri . '/assets/js/faq-accordion.js',
 		array(),
 		wp_get_theme()->get( 'Version' ),
+		array(
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		)
+	);
+
+	// Slick slider enhancements: mobile peek + scrollbar-style progress bar.
+	wp_enqueue_style(
+		'goafrica-slick-slider-enhancements',
+		$theme_uri . '/assets/css/slick-slider-enhancements.css',
+		array( 'goafrica-ollie-child' ),
+		goafrica_child_asset_version( 'assets/css/slick-slider-enhancements.css' )
+	);
+
+	wp_enqueue_script(
+		'goafrica-slick-slider-enhancements',
+		$theme_uri . '/assets/js/slick-slider-enhancements.js',
+		array( 'jquery' ),
+		goafrica_child_asset_version( 'assets/js/slick-slider-enhancements.js' ),
+		array( 'in_footer' => true )
+	);
+
+	// Carousel block (Swiper) enhancements: mobile peek + progress bar.
+	wp_enqueue_style(
+		'goafrica-carousel-block-enhancements',
+		$theme_uri . '/assets/css/carousel-block-enhancements.css',
+		array( 'goafrica-ollie-child' ),
+		goafrica_child_asset_version( 'assets/css/carousel-block-enhancements.css' )
+	);
+
+	wp_enqueue_script(
+		'goafrica-carousel-block-enhancements',
+		$theme_uri . '/assets/js/carousel-block-enhancements.js',
+		array(),
+		goafrica_child_asset_version( 'assets/js/carousel-block-enhancements.js' ),
 		array(
 			'strategy'  => 'defer',
 			'in_footer' => true,
