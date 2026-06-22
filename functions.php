@@ -52,22 +52,6 @@ function goafrica_child_filter_core_button_styles( $args, $block_type ) {
 add_filter( 'register_block_type_args', 'goafrica_child_filter_core_button_styles', 20, 2 );
 
 /**
- * Cache-busting version for a theme asset, based on its file modification time.
- *
- * @param string $relative_path Asset path relative to the theme root.
- * @return string Version string (file mtime, or the theme version as a fallback).
- */
-function goafrica_child_asset_version( $relative_path ) {
-	$absolute_path = get_stylesheet_directory() . '/' . ltrim( $relative_path, '/' );
-
-	if ( file_exists( $absolute_path ) ) {
-		return (string) filemtime( $absolute_path );
-	}
-
-	return (string) wp_get_theme()->get( 'Version' );
-}
-
-/**
  * Enqueue front-end assets.
  */
 function goafrica_child_enqueue_scripts() {
@@ -102,30 +86,11 @@ function goafrica_child_enqueue_scripts() {
 		)
 	);
 
-	// Slick sliders (Tour Operator plugin) are initialised by the plugin itself
-	// and styled by this theme's style.css (arrows + dots). They intentionally
-	// have NO extra JS enhancement: the plugin's responsive config already gives
-	// a sane per-viewport slider (mobile = 1 slide, swipe + native dots), and
-	// runtime option manipulation proved unreliable. Keep the Slick fix CSS-only.
-
-	// Carousel block (Swiper) enhancements: mobile peek + progress bar.
-	wp_enqueue_style(
-		'goafrica-carousel-block-enhancements',
-		$theme_uri . '/assets/css/carousel-block-enhancements.css',
-		array( 'goafrica-ollie-child' ),
-		goafrica_child_asset_version( 'assets/css/carousel-block-enhancements.css' )
-	);
-
-	wp_enqueue_script(
-		'goafrica-carousel-block-enhancements',
-		$theme_uri . '/assets/js/carousel-block-enhancements.js',
-		array(),
-		goafrica_child_asset_version( 'assets/js/carousel-block-enhancements.js' ),
-		array(
-			'strategy'  => 'defer',
-			'in_footer' => true,
-		)
-	);
+	// Sliders are intentionally CSS-only. Both the Slick sliders (Tour Operator
+	// plugin) and the Carousel block (Swiper) are initialised by their own
+	// plugins and styled by this theme's style.css (arrows + native dots). The
+	// dot styles include a flex-wrap/max-width fix so high slide counts wrap
+	// instead of overflowing, so no extra JS enhancement is needed.
 }
 add_action( 'wp_enqueue_scripts', 'goafrica_child_enqueue_scripts' );
 
