@@ -130,6 +130,14 @@ function goafrica_child_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'goafrica_child_enqueue_scripts' );
 
 /**
+ * Register editor-only styles so FAQ answers are always visible while editing.
+ */
+function goafrica_child_editor_styles() {
+	add_editor_style( 'assets/css/editor-overrides.css' );
+}
+add_action( 'after_setup_theme', 'goafrica_child_editor_styles' );
+
+/**
  * Split multi-link ga-button paragraph bindings into individual button items.
  *
  * The post-connection binding renders connected posts as one comma-separated
