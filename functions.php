@@ -203,3 +203,7 @@ function goafrica_child_render_ga_button_rating( $block_content, $block ) {
 add_filter( 'render_block', 'goafrica_child_render_ga_button_rating', 35, 2 );
 
 
+function goafrica_child_use_destination_images() {
+	return true;
+}
+add_filter( 'lsx_to_itinerary_use_destination_images', 'goafrica_child_use_destination_images' );
