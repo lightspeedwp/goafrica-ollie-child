@@ -207,3 +207,31 @@ function goafrica_child_use_destination_images() {
 	return true;
 }
 add_filter( 'lsx_to_itinerary_use_destination_images', 'goafrica_child_use_destination_images' );
+
+
+/**
+ * Alters the titles
+ *
+ * @param array $titles
+ * @return void
+ */
+function goafrica_travel_info_modal_titles( $titles ) {
+	$titles['banking'] = 'Bankieren';
+	$titles['dress'] = 'Kleding';
+	return $titles;
+}
+add_filter( 'lsx_to_travel_info_modal_titles', 'goafrica_travel_info_modal_titles', 10, 1 );
+
+
+/**
+ * Alters the itinerary titles
+ *
+ * @param string $title
+ * @return string
+ */
+function goafrica_travel_itinerary_titles_transform( $title ) {
+	$title = str_replace( 'Day', 'Dag', $title );
+	return $title;
+}
+add_filter( 'lsx_to_itinerary_title', 'goafrica_travel_itinerary_titles_transform', 10, 1 );
+
