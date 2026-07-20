@@ -274,3 +274,13 @@ Tags:
 	text-decoration: none !important;
 	cursor: default;
 }
+
+body .wp-block-group.lsx-accommodation-info > div,
+body .wp-block-group.lsx-tour-info > div{
+	flex-wrap: nowrap;
+}
+
+body .wp-block-group.lsx-accommodation-info>div>*,
+body .wp-block-group.lsx-tour-info>div>* {
+    max-width: 96%;
+}
