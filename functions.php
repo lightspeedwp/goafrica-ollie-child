@@ -257,10 +257,10 @@ add_filter( 'lsx_to_js_strings', 'goafrica_travel_js_strings', 10, 1 );
  * @return array
  */
 function goafrica_wetu_language( $lang ) {
-	$lang = '&lang=nl';
+	$lang .= '&lang=nl';
 	return $lang;
 }
-add_filter( 'lsx_wetu_language', 'goafrica_travel_js_strings', 10, 1 );
+add_filter( 'lsx_wetu_language', 'goafrica_wetu_language', 10, 1 );
 
 
 
