@@ -235,3 +235,32 @@ function goafrica_travel_itinerary_titles_transform( $title ) {
 }
 add_filter( 'lsx_to_itinerary_title', 'goafrica_travel_itinerary_titles_transform', 10, 1 );
 
+
+
+/**
+ * Alters the readless
+ *
+ * @param array $title
+ * @return array
+ */
+function goafrica_travel_js_strings( $js_strings ) {
+	$js_strings['read_less'] = 'Lees minder';
+	return $js_strings;
+}
+add_filter( 'lsx_to_js_strings', 'goafrica_travel_js_strings', 10, 1 );
+
+
+/**
+ * Alters the readless
+ *
+ * @param array $title
+ * @return array
+ */
+function goafrica_wetu_language( $lang ) {
+	$lang = '&lang=nl';
+	return $lang;
+}
+add_filter( 'lsx_wetu_language', 'goafrica_travel_js_strings', 10, 1 );
+
+
+
