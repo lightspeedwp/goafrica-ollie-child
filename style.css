@@ -284,3 +284,72 @@ body .wp-block-group.lsx-accommodation-info>div>*,
 body .wp-block-group.lsx-tour-info>div>* {
     max-width: 96%;
 }
+
+/* ========================================================================== */
+
+/* LSX Included/Not Included Lists                                           */
+
+/* ========================================================================== */
+
+/* Markup comes from goafrica_child_render_meta_lists() in functions.php. The */
+
+/* icons are CSS masks rather than inline SVG, so they scale with the list's   */
+
+/* font size and take their colour from the custom properties below.          */
+
+.lsx-meta-list {
+	--lsx-meta-list-icon-size: 1.25em;
+	--lsx-meta-list-icon-gap: 0.625em;
+	list-style: none;
+	margin-block-end: 0;
+
+	/* Beats Ollie's `ul:where(:not([class*="wp-block"]))` padding reset. */
+	padding-inline-start: 0;
+}
+
+.lsx-meta-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--lsx-meta-list-icon-gap);
+	margin-block-end: 0.5em;
+}
+
+.lsx-meta-list li:last-child {
+	margin-block-end: 0;
+}
+
+.lsx-meta-list li::before {
+	content: "";
+	flex: 0 0 auto;
+	width: var(--lsx-meta-list-icon-size);
+	height: var(--lsx-meta-list-icon-size);
+
+	/* Nudge the icon onto the optical centre of the first line of text. */
+	margin-block-start: 0.125em;
+	background-color: var(--lsx-meta-list-icon-color);
+	-webkit-mask-image: var(--lsx-meta-list-icon);
+	mask-image: var(--lsx-meta-list-icon);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+}
+
+.lsx-included-list {
+	--lsx-meta-list-icon-color: var(--wp--preset--color--primary, #1f4b3b);
+	--lsx-meta-list-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M9 12.75 11.25 15 15 9.75'/%3E%3C/svg%3E");
+}
+
+.lsx-not_included-list {
+	--lsx-meta-list-icon-color: var(--wp--preset--color--support-red, #b92a02);
+	--lsx-meta-list-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M9.75 9.75 14.25 14.25M14.25 9.75 9.75 14.25'/%3E%3C/svg%3E");
+}
+
+/* Masked icons lose their colour in forced-colours mode. */
+@media (forced-colors: active) {
+	.lsx-meta-list li::before {
+		background-color: CanvasText;
+	}
+}

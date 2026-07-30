@@ -263,4 +263,142 @@ function goafrica_wetu_language( $lang ) {
 add_filter( 'lsx_wetu_language', 'goafrica_wetu_language', 10, 1 );
 
 
+/**
+ * Split a WYSIWYG meta value into individual list items.
+ *
+ * The Tour Operator `included` / `not_included` fields are WYSIWYG editors and the
+ * WETU importer stores whatever the API returns, so the saved markup takes several
+ * shapes: authored `<ul>` lists, one `<p>` per item, and `<br>`-separated runs,
+ * frequently with a literal bullet character typed in front of each item.
+ *
+ * @param string $value Raw meta value.
+ * @return array<int, string> Cleaned list items, empty when nothing usable is found.
+ */
+function goafrica_child_split_meta_list( $value ) {
+	// Normalise the non-breaking spaces WYSIWYG editors leave behind so trimming works.
+	$value = str_replace( array( '&nbsp;', "\xc2\xa0" ), ' ', $value );
 
+	if ( preg_match_all( '#<li\b[^>]*>(.*?)</li>#si', $value, $matches ) ) {
+		// Already a list: take the items exactly as they were authored.
+		$items = $matches[1];
+	} else {
+		// Otherwise treat every block boundary and line break as an item separator.
+		$items = preg_split( '/\R/', preg_replace( '#<br\s*/?>|</p>|</div>|<hr\s*/?>#i', "\n", $value ) );
+	}
+
+	$list = array();
+
+	foreach ( $items as $item ) {
+		// Drop leftover block-level tags but keep inline markup such as links and bold.
+		$item = preg_replace( '#</?(?:p|div|ul|ol|li)\b[^>]*>#i', '', $item );
+
+		// Strip a leading bullet glyph so it does not double up with the CSS icon.
+		$unbulleted = preg_replace( '/^[\s\x{2022}\x{00b7}\x{2023}\x{25aa}\x{25e6}\x{2043}\x{2013}\x{2014}\-\*\+]+/u', '', $item );
+		if ( null !== $unbulleted ) {
+			$item = $unbulleted;
+		}
+
+		$item = trim( $item );
+
+		if ( '' === $item || '' === trim( wp_strip_all_tags( $item ) ) ) {
+			continue;
+		}
+
+		$list[] = wp_kses_post( $item );
+	}
+
+	return $list;
+}
+
+/**
+ * Render the included / not_included meta fields as icon lists.
+ *
+ * Icons are applied in CSS from the `lsx-meta-list` classes rather than injected
+ * here, because core runs the bound value through `wp_kses_post()` which strips SVG.
+ *
+ * @param string $return_html The formatted HTML output.
+ * @param string $meta_key    The meta key being queried.
+ * @param mixed  $value       The raw meta value.
+ * @param string $before      HTML before content.
+ * @param string $after       HTML after content.
+ * @return string
+ */
+function goafrica_child_render_meta_lists( $return_html, $meta_key, $value, $before, $after ) {
+	if ( ! in_array( $meta_key, array( 'included', 'not_included' ), true ) ) {
+		return $return_html;
+	}
+
+	if ( ! is_scalar( $value ) || '' === trim( (string) $value ) ) {
+		return $return_html;
+	}
+
+	$items = goafrica_child_split_meta_list( (string) $value );
+
+	if ( empty( $items ) ) {
+		return $return_html;
+	}
+
+	$output = '<ul class="lsx-meta-list lsx-' . esc_attr( $meta_key ) . '-list">';
+
+	foreach ( $items as $item ) {
+		$output .= '<li>' . $item . '</li>';
+	}
+
+	$output .= '</ul>';
+
+	return $before . $output . $after;
+}
+add_filter( 'lsx_to_custom_field_query', 'goafrica_child_render_meta_lists', 10, 5 );
+
+/**
+ * Lift the generated meta list out of its bound paragraph wrapper.
+ *
+ * Block bindings replace the inner HTML of the `<p>`, which would leave a `<ul>`
+ * nested inside a paragraph. Browsers hoist the list out and strand the
+ * paragraph's colour, typography and spacing on an empty `<p>`, so the list is
+ * promoted to the paragraph's place and inherits its presentation attributes.
+ *
+ * @param string $block_content Rendered block content.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function goafrica_child_unwrap_meta_list( $block_content, $block ) {
+	if ( empty( $block_content ) || empty( $block['blockName'] ) || 'core/paragraph' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	if ( false === strpos( $block_content, 'lsx-meta-list' ) ) {
+		return $block_content;
+	}
+
+	$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
+	if ( empty( $binding['source'] ) || 'lsx/post-meta' !== $binding['source'] ) {
+		return $block_content;
+	}
+
+	if ( ! preg_match( '#<ul\b[^>]*\bclass="[^"]*lsx-meta-list[^"]*"[^>]*>.*</ul>#si', $block_content, $list ) ) {
+		return $block_content;
+	}
+
+	$unwrapped = new WP_HTML_Tag_Processor( $list[0] );
+	if ( ! $unwrapped->next_tag( array( 'tag_name' => 'UL' ) ) ) {
+		return $block_content;
+	}
+
+	$paragraph = new WP_HTML_Tag_Processor( $block_content );
+	if ( $paragraph->next_tag( array( 'tag_name' => 'P' ) ) ) {
+		$classes = trim( (string) $paragraph->get_attribute( 'class' ) );
+		$style   = (string) $paragraph->get_attribute( 'style' );
+
+		foreach ( array_filter( preg_split( '/\s+/', $classes ) ) as $class ) {
+			$unwrapped->add_class( $class );
+		}
+
+		if ( '' !== $style ) {
+			$unwrapped->set_attribute( 'style', $style );
+		}
+	}
+
+	return $unwrapped->get_updated_html();
+}
+add_filter( 'render_block', 'goafrica_child_unwrap_meta_list', 20, 2 );
