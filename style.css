@@ -353,3 +353,20 @@ body .wp-block-group.lsx-tour-info>div>* {
 		background-color: CanvasText;
 	}
 }
+
+/* ========================================================================== */
+
+/* LSX Travel Information Cards                                               */
+
+/* ========================================================================== */
+
+/* Tour Operator pads the card wrapper, but on a destination page that wrapper
+   is also the Slick slide, and the plugin's own
+   `.lsx-to-slider.lsx-travel-information-wrapper .slick-slide { padding: 0
+   !important }` strips it. Pad the inner content group instead, which the
+   slider never touches, so no `!important` is needed. Scoped to `.slick-slide`
+   so an un-slidered section keeps its own wrapper padding without doubling up. */
+
+.lsx-to-slider.lsx-travel-information-wrapper .slick-slide.additional-info > .wp-block-group {
+	padding: var(--wp--preset--spacing--small);
+}
