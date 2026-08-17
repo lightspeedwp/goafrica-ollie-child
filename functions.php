@@ -203,10 +203,159 @@ function goafrica_child_render_ga_button_rating( $block_content, $block ) {
 add_filter( 'render_block', 'goafrica_child_render_ga_button_rating', 35, 2 );
 
 
-function goafrica_child_use_destination_images() {
-	return true;
+/**
+ * Replace the required field legend on the contact form.
+ *
+ * Gravity Forms' default legend reads `"*" geeft vereiste velden aan`. The
+ * asterisk keeps GF's own indicator classes so it inherits the same colour as
+ * the asterisks beside the field labels.
+ *
+ * Scoped to form 2 (Stuur ons een bericht) via the form-specific variant of
+ * `gform_required_legend`, because the copy refers to a message; other forms
+ * keep the default legend.
+ *
+ * @param string $legend Default required field legend markup.
+ * @param array  $form   Current form object.
+ * @return string
+ */
+function goafrica_child_contact_required_legend( $legend, $form ) {
+	return 'Velden met een <span class="gfield_required gfield_required_custom">*</span> zijn nodig om je bericht goed te kunnen verwerken.';
 }
-//add_filter( 'lsx_to_itinerary_use_destination_images', 'goafrica_child_use_destination_images' );
+add_filter( 'gform_required_legend_2', 'goafrica_child_contact_required_legend', 10, 2 );
+
+/**
+ * Switch itinerary day images from the accommodation to the destination.
+ *
+ * `lsx_to_itinerary_thumbnail()` already knows how to resolve a day's image from the
+ * connected destination — featured image first, then the destination gallery — but it
+ * only takes that path when the `itinerary_use_destination_images` setting has a value.
+ * Tour Operator never registers a field for that setting, so the value is injected here
+ * instead of patching the plugin.
+ *
+ * @param array|mixed $settings Stored `lsx_to_settings` value.
+ * @return array
+ */
+function goafrica_child_itinerary_destination_images( $settings ) {
+	if ( ! is_array( $settings ) ) {
+		$settings = array();
+	}
+
+	if ( ! isset( $settings['tour'] ) || ! is_array( $settings['tour'] ) ) {
+		$settings['tour'] = array();
+	}
+
+	$settings['tour']['itinerary_use_destination_images'] = 'on';
+
+	return $settings;
+}
+add_filter( 'option_lsx_to_settings', 'goafrica_child_itinerary_destination_images' );
+
+/**
+ * Apply the destination image setting to the already-loaded plugin instance.
+ *
+ * Tour Operator reads `lsx_to_settings` into its legacy object while the plugin file
+ * loads, which is before a theme can filter the option, so that cached copy — the one
+ * `lsx_to_itinerary_thumbnail()` actually reads — is updated as well.
+ */
+function goafrica_child_itinerary_destination_images_runtime() {
+	if ( ! function_exists( 'tour_operator' ) ) {
+		return;
+	}
+
+	$tour_operator = tour_operator();
+
+	if ( ! $tour_operator || ! isset( $tour_operator->legacy ) ) {
+		return;
+	}
+
+	$tour_operator->legacy->options = goafrica_child_itinerary_destination_images( $tour_operator->legacy->options );
+}
+add_action( 'init', 'goafrica_child_itinerary_destination_images_runtime', 20 );
+
+/**
+ * Track the image size Tour Operator is currently resolving.
+ *
+ * `lsx_to_itinerary_thumbnail_src` does not pass the size along, so it is captured from
+ * the size filter that runs earlier in the same call.
+ *
+ * @param string|array|null $size Size being resolved, or null to read the stored value.
+ * @return string|array
+ */
+function goafrica_child_itinerary_image_size( $size = null ) {
+	static $current = 'medium';
+
+	if ( null !== $size ) {
+		$current = $size;
+	}
+
+	return $current;
+}
+add_filter( 'lsx_to_itinerary_thumbnail_size', 'goafrica_child_itinerary_image_size' );
+
+/**
+ * Fall back to the accommodation image when the day's destination has none.
+ *
+ * Destinations are less consistently illustrated than accommodations, so without this
+ * a day whose destination has neither a featured image nor a gallery would drop to the
+ * generic tour placeholder. The plugin's own accommodation walk is repeated here — same
+ * order, same used-image bookkeeping — so repeated days still cycle through the gallery
+ * rather than showing the same photo twice.
+ *
+ * @param string|false $thumbnail_src Image URL resolved by the plugin, false or '' when none was found.
+ * @param int          $index         Current itinerary day.
+ * @param int          $count         Total itinerary days.
+ * @return string|false
+ */
+function goafrica_child_itinerary_accommodation_fallback( $thumbnail_src, $index, $count ) {
+	global $tour_itinerary;
+
+	if ( ! $tour_itinerary || empty( $tour_itinerary->itinerary ) || ! is_array( $tour_itinerary->itinerary ) ) {
+		return $thumbnail_src;
+	}
+
+	$size = goafrica_child_itinerary_image_size();
+
+	if ( false !== $thumbnail_src && '' !== $thumbnail_src ) {
+		// On the last day the plugin has already substituted the tour's own featured
+		// image. Treat that as "nothing found" so an accommodation photo still wins,
+		// which is the order that applied before the destination switch.
+		$tour_image = wp_get_attachment_image_src( get_post_thumbnail_id(), $size );
+
+		if ( $index !== $count || ! is_array( $tour_image ) || $tour_image[0] !== $thumbnail_src ) {
+			return $thumbnail_src;
+		}
+	}
+
+	$accommodation_ids = $tour_itinerary->itinerary['accommodation_to_tour'] ?? array();
+
+	if ( ! is_array( $accommodation_ids ) ) {
+		$accommodation_ids = '' === $accommodation_ids ? array() : array( $accommodation_ids );
+	}
+
+	foreach ( $accommodation_ids as $accommodation_id ) {
+		$tour_itinerary->register_current_gallery( $accommodation_id, 'accommodation_to_tour' );
+
+		$image_id = get_post_thumbnail_id( $accommodation_id );
+
+		if ( empty( $image_id ) || $tour_itinerary->is_image_used( $image_id ) ) {
+			$image_id = $tour_itinerary->find_next_image( $accommodation_id );
+		}
+
+		if ( empty( $image_id ) ) {
+			continue;
+		}
+
+		$image = wp_get_attachment_image_src( $image_id, $size );
+
+		if ( is_array( $image ) ) {
+			$tour_itinerary->save_used_image( $image_id );
+			return $image[0];
+		}
+	}
+
+	return $thumbnail_src;
+}
+add_filter( 'lsx_to_itinerary_thumbnail_src', 'goafrica_child_itinerary_accommodation_fallback', 10, 3 );
 
 
 /**

@@ -370,3 +370,22 @@ body .wp-block-group.lsx-tour-info>div>* {
 .lsx-to-slider.lsx-travel-information-wrapper .slick-slide.additional-info > .wp-block-group {
 	padding: var(--wp--preset--spacing--small);
 }
+
+/* ========================================================================== */
+
+/* Gravity Forms Required Field Indicator                                     */
+
+/* ========================================================================== */
+
+/* The Orbital theme sizes the asterisk next to each label with its own custom
+   property, fixed at 12px, which reads as a stray speck beside a 16px label.
+   Override the property rather than the rule: Gravity Forms keeps ownership of
+   its `:where(:not(.gform-theme__disable))` selector, and the indicator tracks
+   whatever size the label is rendered at. Scoped to `.gform_wrapper.gform-theme`
+   so it outranks the framework's own single-class declaration without
+   `!important`. The legend asterisk is left alone — it sits inside a sentence
+   and should match that sentence's size. */
+
+.gform_wrapper.gform-theme {
+	--gf-ctrl-label-font-size-req: 1em;
+}
