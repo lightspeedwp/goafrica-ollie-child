@@ -551,3 +551,111 @@ function goafrica_child_unwrap_meta_list( $block_content, $block ) {
 	return $unwrapped->get_updated_html();
 }
 add_filter( 'render_block', 'goafrica_child_unwrap_meta_list', 20, 2 );
+
+/**
+ * Return the Tour Operator modals instance, if it is there to work with.
+ *
+ * @return object|null
+ */
+function goafrica_child_get_modals_instance() {
+	if ( ! function_exists( 'tour_operator' ) ) {
+		return null;
+	}
+
+	$tour_operator = tour_operator();
+
+	if ( ! is_object( $tour_operator ) || empty( $tour_operator->classes['modals'] ) ) {
+		return null;
+	}
+
+	$modals = $tour_operator->classes['modals'];
+
+	if ( ! is_object( $modals ) || ! method_exists( $modals, 'output_modal_contents' ) || ! property_exists( $modals, 'modal_contents' ) ) {
+		return null;
+	}
+
+	return $modals;
+}
+
+/**
+ * Print the Tour Operator modal template parts as rendered.
+ *
+ * Replaces `lsx\frontend\Modals::output_modal_contents()`, which puts each
+ * template part's already-rendered block HTML through `wpautop()` and then
+ * `wp_kses()` before printing it. Both are destructive on markup that is not
+ * post content, and the enquiry modal shows it plainly:
+ *
+ * - `wpautop()` wraps the two `.gform-grid-col` spans of the Gravity Form's name
+ *   field in paragraphs, so they drop out of the flex row and lose both the
+ *   column gap and the compensation for the row's negative inline margin, and it
+ *   gives every hidden input in the form footer a trailing `<br />`, which is
+ *   the run of empty space under the submit button.
+ * - `wp_kses()` replaces core's `button` entry with one listing only `class`,
+ *   `aria-label` and `data-close`, which takes `type="submit"` and
+ *   `id="gform_submit_button_1"` off the button Gravity Forms' own script binds
+ *   to and leaves the datepicker toggle with no `type`, so it defaults to
+ *   submitting the form. It also entity-encodes the contents of the inline
+ *   `<script>` Gravity Forms bootstraps itself with — `=>` becomes `=&gt;` —
+ *   and a `<script>` element's contents are raw text, so the browser never
+ *   decodes it back and the block fails to parse.
+ *
+ * None of it shows in the editor, which renders the template part directly.
+ *
+ * Printing the content as rendered is what core itself does for a template
+ * part: this is `do_blocks()` output from a `wp_template_part` post, which only
+ * a user with `edit_theme_options` can author, and the same form rendered
+ * anywhere else on the page goes out unescaped. Only the attributes built here
+ * are escaped.
+ *
+ * `Modals::output_modal_ids()` is left alone: it renders the connected-item
+ * modals and calls neither function.
+ *
+ * @return void
+ */
+function goafrica_child_output_modal_contents() {
+	$modals = goafrica_child_get_modals_instance();
+
+	if ( null === $modals || empty( $modals->modal_contents ) ) {
+		return;
+	}
+
+	wp_enqueue_script( 'lsx-to-modals' );
+
+	foreach ( $modals->modal_contents as $modal_id => $content ) {
+		?>
+		<dialog id="<?php echo esc_attr( $modal_id ); ?>" class="wp-block-hm-popup" data-trigger="click" data-expiry="7" data-backdrop-opacity="0.75" tabindex="-1">
+			<div style="position:relative;">
+				<div class="wp-block-template-part">
+					<?php echo $content; // phpcs:ignore WordPress.Security.EscapingOutput.OutputNotEscaped -- Rendered block output from an administrator-authored template part. ?>
+				</div>
+				<button class="wp-block-hm-popup__close" type="button" aria-label="<?php esc_attr_e( 'Close', 'goafrica-ollie-child' ); ?>" data-close>
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M8 24.5L24 8.5M8 8.5L24 24.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</button>
+			</div>
+		</dialog>
+		<?php
+	}
+}
+
+/**
+ * Swap the plugin's modal content output for the one above.
+ *
+ * `Modals::init()` hooks its version on `wp_loaded` at 10, so this runs at 20.
+ * If the hook is not where it was expected the swap is skipped and the plugin's
+ * own output stands, so a plugin update degrades to today's behaviour rather
+ * than to a missing modal.
+ *
+ * @return void
+ */
+function goafrica_child_replace_modal_output() {
+	$modals = goafrica_child_get_modals_instance();
+
+	if ( null === $modals ) {
+		return;
+	}
+
+	if ( remove_action( 'wp_footer', array( $modals, 'output_modal_contents' ), 11 ) ) {
+		add_action( 'wp_footer', 'goafrica_child_output_modal_contents', 11 );
+	}
+}
+add_action( 'wp_loaded', 'goafrica_child_replace_modal_output', 20 );

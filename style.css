@@ -389,3 +389,76 @@ body .wp-block-group.lsx-tour-info>div>* {
 .gform_wrapper.gform-theme {
 	--gf-ctrl-label-font-size-req: 1em;
 }
+
+/* ========================================================================== */
+
+/* Tour Operator Enquiry Modal                                                */
+
+/* ========================================================================== */
+
+/* Tour Operator paints the modal panel with `.wp-block-hm-popup > *`, the
+   dialog's positioning wrapper, and that is where the frame belongs. Putting it
+   on a group inside the template part instead leaves the panel's own white
+   background and 1.5rem of padding showing around the frame.
+   Scoped to the enquiry modal; drop the ID from these three selectors to give
+   every Tour Operator modal the same treatment. */
+
+#to-modal-modal-enquiry {
+	--goafrica-modal-border-width: 5px;
+	--goafrica-modal-radius: var(--wp--preset--border-radius--md);
+}
+
+#to-modal-modal-enquiry > * {
+	border: var(--goafrica-modal-border-width) solid var(--wp--preset--color--primary-accent);
+	border-radius: var(--goafrica-modal-radius);
+	background-color: var(--wp--preset--color--primary-alt-light);
+}
+
+/* The close button is absolutely positioned against the panel's padding box, so
+   it already sits inside the border. Only its outer corner needs rounding to
+   follow the frame. */
+
+#to-modal-modal-enquiry .wp-block-hm-popup__close {
+	border-radius: 0 calc(var(--goafrica-modal-radius) - var(--goafrica-modal-border-width)) 0 var(--wp--preset--border-radius--xs);
+	background: var(--wp--preset--color--primary-alt-light);
+	color: var(--wp--preset--color--primary);
+}
+
+#to-modal-modal-enquiry .wp-block-hm-popup__close:hover,
+#to-modal-modal-enquiry .wp-block-hm-popup__close:focus-visible {
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--primary-alt);
+}
+
+/* The group wrapping the form carries a -52px top margin set in the Site Editor
+   to swallow the empty paragraph `wpautop()` used to leave above the form.
+   goafrica_child_output_modal_contents() removes the paragraph, so the margin
+   now only pulls the form heading up under the panel's top edge. Clear the
+   margin on the Enquiry Modal template part in the Site Editor, then delete
+   this rule — inline styles are the only reason it needs `!important`. */
+
+#to-modal-modal-enquiry .wp-block-template-part > .wp-block-group {
+	margin-top: 0 !important;
+}
+
+/* ========================================================================== */
+
+/* Gravity Forms Choice Inputs                                                */
+
+/* ========================================================================== */
+
+/* Ollie styles every input that is not a submit or a radio, which catches
+   checkboxes and hands them `padding: .5em 1em`. That is what stretches the box
+   into a rectangle, and it also widens the `minmax(var(--gf-ctrl-choice-size),
+   max-content)` column Gravity Forms lays each choice out in, so the label is
+   pushed off with it. Ollie's rule and Gravity Forms' both weigh 0-2-1 and
+   Ollie loads later, so give the box back to Gravity Forms' own control token
+   from a selector that outranks both. */
+
+.gform_wrapper.gform-theme input[type="checkbox"] {
+	inline-size: var(--gf-ctrl-choice-size, 22px);
+	block-size: var(--gf-ctrl-choice-size, 22px);
+	padding: 0;
+	border-radius: var(--wp--preset--border-radius--xs);
+	box-shadow: none;
+}
