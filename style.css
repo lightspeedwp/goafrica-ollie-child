@@ -426,19 +426,7 @@ body .wp-block-group.lsx-tour-info>div>* {
 
 #to-modal-modal-enquiry .wp-block-hm-popup__close:hover,
 #to-modal-modal-enquiry .wp-block-hm-popup__close:focus-visible {
-	background: var(--wp--preset--color--base);
 	color: var(--wp--preset--color--primary-alt);
-}
-
-/* The group wrapping the form carries a -52px top margin set in the Site Editor
-   to swallow the empty paragraph `wpautop()` used to leave above the form.
-   goafrica_child_output_modal_contents() removes the paragraph, so the margin
-   now only pulls the form heading up under the panel's top edge. Clear the
-   margin on the Enquiry Modal template part in the Site Editor, then delete
-   this rule — inline styles are the only reason it needs `!important`. */
-
-#to-modal-modal-enquiry .wp-block-template-part > .wp-block-group {
-	margin-top: 0 !important;
 }
 
 /* ========================================================================== */
