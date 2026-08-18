@@ -450,3 +450,23 @@ body .wp-block-group.lsx-tour-info>div>* {
 	border-radius: var(--wp--preset--border-radius--xs);
 	box-shadow: none;
 }
+
+/* ========================================================================== */
+
+/* Gravity Forms Date Picker                                                  */
+
+/* ========================================================================== */
+
+/* Gravity Forms gives every control `--gf-local-width: 100%`, then overrides the
+   date input back to `auto` for the multi-input date formats. The single-input
+   datepicker inherits that override, and because `.ginput_container_date` is a
+   flex row the input falls back to its 20-character intrinsic width instead of
+   spanning the field. Put the control width back and stop it shrinking: the
+   toggle button is `flex: none` with `translateX(-100%)`, so it needs to
+   overflow the row to land in the padding the input reserves for it via
+   `--gf-field-date-ctrl-padding-x-end`. */
+
+.gform_wrapper.gform-theme .gfield--input-type-datepicker .ginput_container_date > input.datepicker {
+	--gf-local-width: 100%;
+	flex-shrink: 0;
+}
