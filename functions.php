@@ -553,6 +553,163 @@ function goafrica_child_unwrap_meta_list( $block_content, $block ) {
 add_filter( 'render_block', 'goafrica_child_unwrap_meta_list', 20, 2 );
 
 /**
+ * The text shown in place of a tour price when there is no amount to show.
+ *
+ * @return string
+ */
+function goafrica_child_price_on_request_label() {
+	return _x( 'Op aanvraag', 'shown instead of a tour price when none is set', 'goafrica-ollie-child' );
+}
+
+/**
+ * Work out what a tour's price field should display.
+ *
+ * Returns null when the field holds a normal amount, so Tour Operator's own
+ * currency formatting stands. Otherwise returns the text to show in its place:
+ * whatever was typed when it carries no digits, and the on-request label when
+ * nothing was entered.
+ *
+ * Both cases are handled here because the field arrives in three shapes. The
+ * WETU importer leaves some tours with no price at all and others with a lone
+ * space, and prices that are not yet fixed are typed in as words. Treating
+ * "no digits" and "nothing at all" the same way means a re-import cannot
+ * reintroduce a broken price, and nobody has to remember to type anything.
+ *
+ * @param int $post_id Post being rendered.
+ * @return string|null Text to display, or null to leave the price alone.
+ */
+function goafrica_child_price_on_request_text( $post_id ) {
+	if ( empty( $post_id ) || 'tour' !== get_post_type( $post_id ) ) {
+		return null;
+	}
+
+	$price = get_post_meta( $post_id, 'price', true );
+
+	if ( ! is_scalar( $price ) ) {
+		$price = '';
+	}
+
+	// The importer and the WYSIWYG editors both leave non-breaking spaces behind,
+	// so normalise them before deciding whether anything was actually entered.
+	$price = trim( str_replace( array( '&nbsp;', "\xc2\xa0" ), ' ', (string) $price ) );
+
+	if ( '' === $price ) {
+		return goafrica_child_price_on_request_label();
+	}
+
+	if ( ! preg_match( '/\d/', $price ) ) {
+		// Only pass the value through when there is a word in it. The importer also
+		// leaves stray punctuation behind — a lone '.' is the common one — which is
+		// neither an amount nor something worth showing a visitor.
+		return preg_match( '/\p{L}/u', $price ) ? $price : goafrica_child_price_on_request_label();
+	}
+
+	return null;
+}
+
+/**
+ * Keep the price block on the page when there is no amount to show.
+ *
+ * Tour Operator's `maybe_hide_varitaion()` empties any `lsx-*-wrapper` group whose
+ * meta field has no value, which on a tour takes the "Vanaf:" label and the price
+ * paragraph with it — so the on-request text would never be reached.
+ *
+ * Both spellings are hooked deliberately: the plugin shipped this filter as
+ * `..._varitaion_override` before the name was corrected, and which one the
+ * installed version applies cannot be determined from the theme.
+ *
+ * @param bool   $has_values Whether the wrapper's fields have values.
+ * @param string $meta_key   The meta key being checked.
+ * @param mixed  $value      The raw meta value.
+ * @param int    $post_id    Post being rendered.
+ * @return bool
+ */
+function goafrica_child_always_show_tour_price( $has_values, $meta_key, $value = '', $post_id = 0 ) {
+	if ( 'price' !== $meta_key ) {
+		return $has_values;
+	}
+
+	if ( empty( $post_id ) ) {
+		$post_id = get_the_ID();
+	}
+
+	if ( 'tour' !== get_post_type( $post_id ) ) {
+		return $has_values;
+	}
+
+	return true;
+}
+add_filter( 'lsx_to_maybe_hide_variation_override', 'goafrica_child_always_show_tour_price', 10, 4 );
+add_filter( 'lsx_to_maybe_hide_varitaion_override', 'goafrica_child_always_show_tour_price', 10, 4 );
+
+/**
+ * Show the on-request text in place of a price that has no amount.
+ *
+ * This runs on the rendered block rather than on the bound value because two
+ * separate things have to be undone, and both of them happen during rendering:
+ *
+ * - `Tour::price_filter()` strips every non-digit from the value and puts the
+ *   remainder through `number_format()`, so a tour priced "op aanvraag" and one
+ *   holding a lone space both arrive here as `€0.00`.
+ * - `Bindings::render_paragraph_prefix_block()` prepends the block's `prefix`
+ *   attribute at priority 20, which is where the bare `€` on the tour cards and
+ *   the "From:" on the tour modal come from.
+ *
+ * Replacing the paragraph's contents after both have run settles them together
+ * and drops the prefix along with the amount, which is why this sits at 25.
+ * It also puts the substitution after core has run the bound value through
+ * `wp_kses_post()`, so the text is not filtered twice.
+ *
+ * The price is read from the post rather than from the rendered value, because by
+ * this point the value has already been reduced to a formatted number.
+ *
+ * @param string   $block_content Rendered block content.
+ * @param array    $block         Parsed block data.
+ * @param WP_Block $block_obj     Block instance.
+ * @return string
+ */
+function goafrica_child_render_price_on_request( $block_content, $block, $block_obj = null ) {
+	if ( empty( $block_content ) || empty( $block['blockName'] ) || 'core/paragraph' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	$binding = $block['attrs']['metadata']['bindings']['content'] ?? array();
+
+	// The tour cards bind through core's own source, the fast facts and the modal
+	// through the plugin's, and both end up in the same broken state.
+	if ( empty( $binding['source'] ) || ! in_array( $binding['source'], array( 'lsx/post-meta', 'core/post-meta' ), true ) ) {
+		return $block_content;
+	}
+
+	$key = isset( $binding['args']['key'] ) ? str_replace( '-', '_', $binding['args']['key'] ) : '';
+
+	if ( 'price' !== $key ) {
+		return $block_content;
+	}
+
+	// `core/post-meta` declares `postId` as context, so a bound paragraph inside a
+	// query loop carries the card's own post. The plugin's source declares none,
+	// where the current post in the loop is the same thing.
+	$post_id = is_object( $block_obj ) && ! empty( $block_obj->context['postId'] ) ? $block_obj->context['postId'] : get_the_ID();
+
+	$text = goafrica_child_price_on_request_text( $post_id );
+
+	if ( null === $text ) {
+		return $block_content;
+	}
+
+	return preg_replace_callback(
+		'#(<p\b[^>]*>)(.*?)(</p>)#si',
+		static function( $matches ) use ( $text ) {
+			return $matches[1] . esc_html( $text ) . $matches[3];
+		},
+		$block_content,
+		1
+	);
+}
+add_filter( 'render_block', 'goafrica_child_render_price_on_request', 25, 3 );
+
+/**
  * Return the Tour Operator modals instance, if it is there to work with.
  *
  * @return object|null
