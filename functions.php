@@ -562,6 +562,18 @@ function goafrica_child_price_on_request_label() {
 }
 
 /**
+ * Post types whose `price` field gets the on-request treatment.
+ *
+ * Accommodation shares the tour's `price` key and card markup, and the
+ * travel-style archives list both side by side.
+ *
+ * @return string[]
+ */
+function goafrica_child_priced_post_types() {
+	return array( 'tour', 'accommodation' );
+}
+
+/**
  * Work out what a tour's price field should display.
  *
  * Returns null when the field holds a normal amount, so Tour Operator's own
@@ -579,7 +591,7 @@ function goafrica_child_price_on_request_label() {
  * @return string|null Text to display, or null to leave the price alone.
  */
 function goafrica_child_price_on_request_text( $post_id ) {
-	if ( empty( $post_id ) || 'tour' !== get_post_type( $post_id ) ) {
+	if ( empty( $post_id ) || ! in_array( get_post_type( $post_id ), goafrica_child_priced_post_types(), true ) ) {
 		return null;
 	}
 
@@ -633,7 +645,7 @@ function goafrica_child_always_show_tour_price( $has_values, $meta_key, $value =
 		$post_id = get_the_ID();
 	}
 
-	if ( 'tour' !== get_post_type( $post_id ) ) {
+	if ( ! in_array( get_post_type( $post_id ), goafrica_child_priced_post_types(), true ) ) {
 		return $has_values;
 	}
 
