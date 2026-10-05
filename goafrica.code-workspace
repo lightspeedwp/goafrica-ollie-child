@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"name": "ga-enhancements",
+			"path": "../../plugins/ga-enhancements"
+		}
+	],
+	"settings": {}
+}
