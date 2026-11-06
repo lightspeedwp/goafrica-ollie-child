@@ -1,6 +1,22 @@
 {
 	"$schema": "https://schemas.wp.org/wp/trunk/theme.json",
 	"version": 3,
+	"templateParts": [
+		{ "name": "header", "title": "Header", "area": "header" },
+		{ "name": "footer", "title": "Footer", "area": "footer" },
+		{ "name": "sidebar", "title": "Sidebar", "area": "sidebar" },
+		{ "name": "top-header", "title": "Top Header", "area": "header" },
+		{ "name": "main-header", "title": "Main Header", "area": "header" },
+		{ "name": "header-2", "title": "Header (Country)", "area": "header" },
+		{ "name": "footer-2", "title": "Footer (Country)", "area": "footer" },
+		{ "name": "ga-footer", "title": "GA Footer", "area": "uncategorized" },
+		{ "name": "mobile-menu", "title": "Mobile Menu", "area": "menu" },
+		{ "name": "dropdown-menu", "title": "Destination Menu", "area": "menu" },
+		{ "name": "dropdown-menu-2", "title": "Travel Style Menu", "area": "menu" },
+		{ "name": "ga-fast-facts-accommodation", "title": "GA Accommodation Fast Facts", "area": "uncategorized" },
+		{ "name": "ga-fast-facts-destination", "title": "GA Destination Fast Facts", "area": "uncategorized" },
+		{ "name": "ga-fast-facts-tour", "title": "GA Tour Fast Facts", "area": "uncategorized" }
+	],
 	"settings": {
     "layout": {
 			"contentSize": "800px",
