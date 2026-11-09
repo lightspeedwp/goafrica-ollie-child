@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+    branches: [develop]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: PHP syntax
+        run: |
+          php --version
+          git ls-files -z "*.php" | xargs -0 -r -n1 php -l > /dev/null
+      - name: JSON validity
+        run: |
+          python3 -c "import json,sys,glob; [json.load(open(f)) for f in [\"theme.json\"]+glob.glob(\"styles/*.json\")]"
