@@ -3,7 +3,7 @@
 Contributors: LightSpeedWP
 Requires at least: 6.9
 Tested up to: 6.9
-Requires PHP: 5.7
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,12 @@ A child theme of the Ollie theme for GoAfrica.nl
 
 
 == Changelog ==
+
+= 1.1.0 =
+* Sync live Site Editor templates, parts and patterns into the theme
+* Add a main landmark to single, accommodation and taxonomy archive templates
+* Show Op aanvraag for accommodation with no price; fix empty tour card value
+* Set a real theme version
 
 = 1.0.0 =
 * Initial release
