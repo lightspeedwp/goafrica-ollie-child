@@ -1,0 +1,19 @@
+/*
+ * Editor-only overrides: reveal elements that are hidden by hover/JS effects
+ * on the front end so they remain editable in the block editor canvas.
+ */
+
+/* GA FAQ Accordion — always show answers */
+.is-style-ga-faq-accordion .schema-faq-answer {
+	max-height: none !important;
+	overflow: visible !important;
+	margin-top: 0.75rem !important;
+}
+
+/* GA Travel Style Card — always show hidden excerpt */
+.is-style-ga-travel-style-card .hidden-excerpt {
+	max-height: none !important;
+	opacity: 1 !important;
+	overflow: visible !important;
+	margin-top: var(--wp--preset--spacing--small) !important;
+}

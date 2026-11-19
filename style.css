@@ -23,8 +23,18 @@ Tags:
 
 /* Slider Buttons */
 
+.wp-block-cb-carousel-v2 {
+	position: relative;
+}
+
+.wp-block-cb-carousel-v2[data-cb-pagination="true"] .swiper-horizontal {
+	margin-bottom: var(--wp--preset--spacing--medium) !important;
+}
+
 /* Position arrows vertically centered */
-.lsx-to-slider .slick-arrow {
+.lsx-to-slider .slick-arrow,
+.wp-block-cb-carousel-v2 .swiper-button-prev,
+.wp-block-cb-carousel-v2 .swiper-button-next {
 	position: absolute !important;
 	top: 50% !important;
 	transform: translateY(-50%) !important;
@@ -32,23 +42,29 @@ Tags:
 }
 
 /* Left & right anchors */
-.lsx-to-slider .slick-prev {
+.lsx-to-slider .slick-prev,
+.wp-block-cb-carousel-v2 .swiper-button-prev {
 	left: -4rem !important;
 }
 
-.lsx-to-slider .slick-next {
+.lsx-to-slider .slick-next,
+.wp-block-cb-carousel-v2 .swiper-button-next {
 	right: -4rem !important;
 	transform: translateY(-50%) rotate(180deg) !important;
 }
 
 /* Remove default arrows */
-.lsx-to-slider .slick-arrow::before {
+.lsx-to-slider .slick-arrow::before,
+.wp-block-cb-carousel-v2 .swiper-button-prev::after,
+.wp-block-cb-carousel-v2 .swiper-button-next::after {
 	content: none !important;
 }
 
 /* Keep icon + sizing overrides */
 .lsx-to-slider .slick-prev,
-.lsx-to-slider .slick-next {
+.lsx-to-slider .slick-next,
+.wp-block-cb-carousel-v2 .swiper-button-prev,
+.wp-block-cb-carousel-v2 .swiper-button-next {
 	width: 54px !important;
 	height: 54px !important;
 	background: url('./assets/icons/slider-button-default.svg') no-repeat center/contain !important;
@@ -64,33 +80,65 @@ Tags:
 .lsx-to-slider .slick-prev:hover,
 .lsx-to-slider .slick-prev:focus-visible,
 .lsx-to-slider .slick-next:hover,
-.lsx-to-slider .slick-next:focus-visible {
+.lsx-to-slider .slick-next:focus-visible,
+.wp-block-cb-carousel-v2 .swiper-button-prev:hover,
+.wp-block-cb-carousel-v2 .swiper-button-prev:focus-visible,
+.wp-block-cb-carousel-v2 .swiper-button-next:hover,
+.wp-block-cb-carousel-v2 .swiper-button-next:focus-visible {
 	background-image: url('./assets/icons/slider-button-hover.svg') !important;
 }
 
+@media (max-width: 781px) {
+	.wp-block-cb-carousel-v2 .swiper-button-prev,
+	.wp-block-cb-carousel-v2 .swiper-button-next {
+		display: none !important;
+	}
+}
+
 /* Slider dots */
-.lsx-to-slider .slick-dots {
+.lsx-to-slider .slick-dots,
+.wp-block-cb-carousel-v2 .swiper-pagination {
 	position: static !important;
 	left: auto !important;
 	right: auto !important;
 	transform: none !important;
 	width: max-content !important;
-	margin: var(--wp--preset--spacing--30) auto 0 !important;
+	/* Cap to the slider width so a high dot count wraps instead of overflowing
+	   (the case the old JS progress bar was added to solve). Small counts still
+	   shrink-to-fit and centre via the auto margins. */
+	max-width: 100% !important;
+	margin: var(--wp--preset--spacing--medium) auto 0 !important;
 	padding: 0 !important;
 	display: flex !important;
+	flex-wrap: wrap !important;
 	align-items: center !important;
 	justify-content: center !important;
-	gap: var(--wp--preset--spacing--20) !important;
+	gap: var(--wp--preset--spacing--small) !important;
 	list-style: none !important;
 }
 
-/* @media (min-width: 782px) {
-	.lsx-to-slider .slick-dots {
-		display: none !important;
+@media (max-width: 781px) {
+	/* Clip each slider to its own width so the single mobile slide shows
+	   full-width without overflowing the viewport. */
+	.lsx-to-slider,
+	.lsx-to-slider .slick-list {
+		overflow: hidden !important;
 	}
-} */
 
-.lsx-to-slider .slick-dots li {
+	/* Reset the Slick list to full width; Slick sizes each slide from the
+	   list width, so a narrower list squashes the single mobile slide. */
+	.lsx-to-slider .slick-list {
+		width: 100% !important;
+	}
+
+	/* Keep Swiper clipped to the carousel block edge (Swiper default). */
+	.wp-block-cb-carousel-v2 .swiper {
+		overflow: hidden !important;
+	}
+}
+
+.lsx-to-slider .slick-dots li,
+.wp-block-cb-carousel-v2 .swiper-pagination-bullet {
 	margin: 0 !important;
 	padding: 0 !important;
 	display: flex;
@@ -103,7 +151,8 @@ Tags:
 	content: none !important;
 }
 
-.lsx-to-slider .slick-dots li button {
+.lsx-to-slider .slick-dots li button,
+.wp-block-cb-carousel-v2 .swiper-pagination-bullet {
 	width: 12px !important;
 	height: 12px !important;
 	margin: 0 !important;
@@ -112,6 +161,7 @@ Tags:
 	border: 0 !important;
 	border-radius: 999px !important;
 	background: var(--wp--preset--color--primary-accent) !important;
+	opacity: 1 !important;
 	cursor: pointer;
 	overflow: hidden;
 	text-indent: -9999px;
@@ -120,14 +170,81 @@ Tags:
 
 .lsx-to-slider .slick-dots li.slick-active button,
 .lsx-to-slider .slick-dots li button:hover,
-.lsx-to-slider .slick-dots li button:focus-visible {
+.lsx-to-slider .slick-dots li button:focus-visible,
+.wp-block-cb-carousel-v2 .swiper-pagination-bullet-active,
+.wp-block-cb-carousel-v2 .swiper-pagination-bullet:hover,
+.wp-block-cb-carousel-v2 .swiper-pagination-bullet:focus-visible {
 	width: 32px !important;
 	background: var(--wp--preset--color--primary) !important;
 }
 
-.lsx-to-slider .slick-dots li button:focus-visible {
+.lsx-to-slider .slick-dots li button:focus-visible,
+.wp-block-cb-carousel-v2 .swiper-pagination-bullet:focus-visible {
 	outline: 2px solid var(--wp--preset--color--primary);
 	outline-offset: 2px;
+}
+
+.lsx-travel-information-wrapper .additional-info > .wp-block-group {
+	padding: var(--wp--preset--spacing--small) !important;
+}
+
+.lsx-travel-information-wrapper .additional-info {
+	transition: box-shadow 200ms ease, transform 200ms ease;
+	will-change: background-color box-shadow;
+}
+
+.lsx-travel-information-wrapper .additional-info:hover,
+.lsx-travel-information-wrapper .additional-info:focus-within {
+	background-color: var(--wp--preset--color--primary-light) !important;
+	box-shadow: var(--wp--preset--shadow--medium-light) !important;
+}
+
+
+/* ========================================================================== */
+
+/* Gallery Layout                                                             */
+
+/* ========================================================================== */
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: var(--wp--style--unstable-gallery-gap, 16px);
+	align-items: start;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
+	width: 100%;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image {
+	margin: 0;
+	min-width: 0;
+	max-width: none;
+	flex-grow: 0;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image > a,
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image > div {
+	width: 100%;
+}
+
+.lsx-gallery-wrapper .wp-block-gallery.has-nested-images figure.wp-block-image img {
+	width: 100% !important;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+}
+
+@media (max-width: 781px) {
+	.lsx-gallery-wrapper .wp-block-gallery.has-nested-images {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 480px) {
+	.lsx-gallery-wrapper .wp-block-gallery.has-nested-images {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }
 
 
@@ -270,6 +387,26 @@ Tags:
 
 .is-style-header-nav .current-menu-item>.wp-block-navigation-item__content,
 .is-style-header-nav .current-menu-ancestor>.wp-block-navigation-item__content {
+	color: var(--wp--preset--color--primary-alt);
+	text-decoration: none !important;
+	cursor: default;
+}
+
+/* Mega Menu navigation block: font-weight 500, contrast color, brand-dark hover */
+.is-style-mega-menu-nav .wp-block-navigation__container,
+.is-style-mega-menu-nav .wp-block-navigation-item__content {
+	font-weight: 500;
+	color: var(--wp--preset--color--secondary);
+}
+
+.is-style-mega-menu-nav .wp-block-navigation-item__content:hover,
+.is-style-mega-menu-nav .wp-block-navigation-item__content:focus-visible {
+	color: var(--wp--preset--color--primary-alt-accent);
+	text-decoration: none;
+}
+
+.is-style-mega-menu-nav .current-menu-item>.wp-block-navigation-item__content,
+.is-style-mega-menu-nav .current-menu-ancestor>.wp-block-navigation-item__content {
 	color: var(--wp--preset--color--primary-alt);
 	text-decoration: none !important;
 	cursor: default;
